@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * print_listint - prints all elements of a listint_t list
+ * insert_node - function in C that inserts a number into a sorted linked list
  * @head: pointer to head of list
  * @number: number to add
  * Return: the address of the new node, or NULL if it failed
@@ -11,6 +11,7 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new = NULL, *aux = NULL;
+
 	if (!head)
 		return (NULL);
 	new = malloc(sizeof(listint_t));
