@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-from printout import *
+__import__("printout")
