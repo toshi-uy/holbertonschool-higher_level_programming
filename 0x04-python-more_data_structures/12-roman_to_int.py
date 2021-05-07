@@ -2,11 +2,11 @@
 def roman_to_int(roman_string):
     if roman_string is None or len(roman_string) == 0:
         return None
-    roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     result = 0
-    for i,c in enumerate(roman_string):
-        if (i+1) == len(roman_string) or roman[c] >= roman[roman_string[i+1]]:
-            result += roman[c]
+    for i, c in enumerate(roman_string):
+        if (i + 1) == len(roman_string) or rom[c] >= rom[roman_string[i + 1]]:
+            result += rom[c]
         else:
-            result -= roman[c]
+            result -= rom[c]
     return result
