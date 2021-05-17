@@ -8,6 +8,5 @@ def safe_print_list_integers(my_list=[], x=0):
         except:
             if i != x:
                 i += 1
-    if counter != 0:
-        print()
+    print()
     return counter
