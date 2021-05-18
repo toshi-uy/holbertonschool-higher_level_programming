@@ -3,7 +3,12 @@
 
 
 class Square:
-    """ Classs that defines a square """
+    """
+    Classs that defines a square
+    Args:
+            size (int): The size of the square.
+            position (int, int): The position of the square.
+    """
     def __init__(self, size=0, position=(0, 0)):
         """initialization method"""
         if type(size) is not int:
@@ -48,6 +53,7 @@ class Square:
 
     @position.setter
     def position(self, value):
+        """initialization method"""
         if type(position) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif len(position) != 2:
