@@ -37,7 +37,5 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    new_matrix = []
-    for j in i:
-        new_matrix.append()
-    return
+
+    return list(list(round(j / div, 2) for j in i) for i in matrix)
