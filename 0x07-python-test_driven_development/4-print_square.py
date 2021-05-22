@@ -8,6 +8,7 @@ if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/4-print_square.txt")
 
+
 def print_square(size):
     """
     function that prints a square with the character #.
