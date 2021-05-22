@@ -19,9 +19,9 @@ def add_integer(a, b=98):
     TypeError: with the message a must be an integer if either
     a or b are no integreres or floats
     """
-    if isinstance(a, float):
+    if type(a) is float:
         a = int(a)
-    if isinstance(b, float):
+    if type(b) is float:
         b = int(b)
     if type(a) != int:
         raise TypeError("a must be an integrer")
