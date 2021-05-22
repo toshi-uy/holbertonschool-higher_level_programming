@@ -29,7 +29,7 @@ Importing the function from the module:
     >>> add_integer(5, 'hola')
     Traceback (most recent call last):
         ...
-    TypeError: b must be an integrer
+    TypeError: b must be an integer
     >>> add_integer(1e1000, 5)
     Traceback (most recent call last):
         ...
