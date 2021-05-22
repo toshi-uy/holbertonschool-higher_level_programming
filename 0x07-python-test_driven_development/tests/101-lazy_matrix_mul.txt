@@ -1,0 +1,62 @@
+======================
+Test archive for ``lazy_matrix_mul``
+-------------------
+
+Importing the function from the module:
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Checking for module docstring:
+>>> m = __import__("101-lazy_matrix_mul").__doc__
+>>> len(m) > 1
+True
+
+Checking for function docstring:
+>>> f = __import__("101-lazy_matrix_mul").lazy_matrix_mul.__doc__
+>>> len(f) > 1
+True
+
+>>> lazy_matrix_mul([[6, 2], [2, 5]])
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+array([[19, 22],
+       [43, 50]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+array([[13, 16]])
+
+>>> lazy_matrix_mul([[1, 2], [3, -4]], [[1, 2], [-3, -4]])
+array([[-5, -6],
+       [15, 22]])
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, "string"]])
+Traceback (most recent call last):
+...
+ValueError: data type must provide an itemsize
+
+>>> lazy_matrix_mul([[1, 2], [3, float('inf')]], [[1, 2], [3, 4]])
+array([[ 7., 10.],
+       [inf, inf]])
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, None]])
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+
+>>> lazy_matrix_mul([[1, 2], [3, True]], [[1, False], [3, True]])
+array([[7, 2],
+       [6, 1]])
+
+>>> lazy_matrix_mul([[], []], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)

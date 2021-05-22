@@ -1,5 +1,5 @@
 ======================
-Test archive for ``matrix_divided``
+Test archive for ``print_square``
 -------------------
 
 Importing the function from the module:
