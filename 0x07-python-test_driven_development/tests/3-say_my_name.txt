@@ -1,0 +1,45 @@
+======================
+Test archive for ``say_my_name``
+-------------------
+
+Importing the function from the module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking for module docstring:
+>>> m = __import__("3-say_my_name").__doc__
+>>> len(m) > 1
+True
+    
+Checking for function docstring:
+>>> f = __import__("3-say_my_name").say_my_name.__doc__
+>>> len(f) > 1
+True
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob
+
+>>> say_my_name(12, "Bob")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Bob", 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(["HOLA"], "Bob")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("", "Bob")
+My name is  Bob
+
+>>> say_my_name(str(80), "Bob")
+My name is 80 Bob
+
