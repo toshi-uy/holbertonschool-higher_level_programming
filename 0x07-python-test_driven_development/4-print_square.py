@@ -15,8 +15,8 @@ def print_square(size):
     size: is the size length of the square
     size must be a positive integrer
     """
-    if type(size) is float:
-        size = int(size)
+    if type(size) is float and size < 0:
+        raise TypeError("size must be an integer")
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:
