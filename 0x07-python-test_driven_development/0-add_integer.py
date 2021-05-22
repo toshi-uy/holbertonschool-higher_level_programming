@@ -17,7 +17,7 @@ def add_integer(a, b=98):
     a and b are first casted to integers if they are float
     Raises:
     TypeError: with the message a must be an integer if either
-    a or b are no integreres or floats
+    a or b are no integers or floats
     """
     if type(a) is float:
         a = int(a)
