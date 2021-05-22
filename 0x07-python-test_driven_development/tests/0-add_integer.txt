@@ -43,7 +43,10 @@ Importing the function from the module:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
-
+    >>> add_integer(1, "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
 
 """
   
