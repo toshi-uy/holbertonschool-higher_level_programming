@@ -30,6 +30,7 @@ Importing the function from the module:
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
     >>> add_integer(1e1000, 5)
     Traceback (most recent call last):
         ...
