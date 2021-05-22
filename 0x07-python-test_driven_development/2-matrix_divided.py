@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Test Driven Doc import
 Don't import using __import__
