@@ -6,7 +6,7 @@ Don't import using __import__
 """
 
 import doctest
-doctest.testfile("tests/2-matrix_divided.txt")
+doctest.testfile("tests/0-add_integer.txt")
 
 
 def add_integer(a, b=98):
