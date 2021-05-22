@@ -5,6 +5,10 @@ Don't import using __import__
 
 """
 
+import doctest
+doctest.testfile("tests/2-matrix_divided.txt")
+
+
 def add_integer(a, b=98):
     """
     function that adds 2 integers
