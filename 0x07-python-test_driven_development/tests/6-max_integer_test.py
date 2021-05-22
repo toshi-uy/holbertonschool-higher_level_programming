@@ -21,6 +21,9 @@ class TestMaxInteger(unittest.TestCase):
     """test for empty list"""
     def test_no_list(self):
         self.assertEqual(max_integer([]), None)
+    """test for empty list"""
+    def test_listofone(self):
+        self.assertEqual(max_integer([1]), 1)
     """test for True as argument"""
     def test_True(self):
         with self.assertRaises(TypeError):
