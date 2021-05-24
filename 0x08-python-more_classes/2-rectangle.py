@@ -54,14 +54,3 @@ class Rectangle:
         """
         return self.__width * self.__height
     
-    def perimeter(self):
-        """
-        Perimeter method
-        Args:
-            width: The first parameter.
-            height: The second parameter.
-
-        Returns:
-            Perimeter of the rectangle.
-        """
-        return (2 * self.__width) + (2 * self.__height)
