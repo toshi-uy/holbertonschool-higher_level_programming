@@ -91,7 +91,7 @@ class Rectangle:
                     rect += Rectangle.print_symbol
                     if i == self.__width - 1 and j != self.__height - 1:
                         rect += '\n'
-            return rect
+            return str(rect)
     def __repr__(self):
         """
         Representation of the Rectangle
