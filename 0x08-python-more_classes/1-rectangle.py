@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-
+"""
+Creating class for rectangle
+"""
 
 class Rectangle:
     """
     Rectangle Class
+    Args:
+        width (int): Rectangle width.
+        heigth (int): Rectangle height
     """
 
     def __init__(self, width=0, height=0):
