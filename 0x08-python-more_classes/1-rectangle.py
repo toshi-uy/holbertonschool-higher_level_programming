@@ -28,7 +28,6 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    """ width setter """
     def width(self, value):
         if type(value) is int and value > 0:
             self.__width = value
@@ -43,7 +42,6 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    """ height setter """
     def height(self, value):
         if type(value) is int and value > 0:
             self.__height = value
