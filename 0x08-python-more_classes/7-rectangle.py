@@ -6,6 +6,9 @@ class Rectangle:
     Rectangle Class
     """
 
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """
         docstring on the __init__ method.
@@ -13,6 +16,7 @@ class Rectangle:
             width (int): Rectangle width.
             heigth (int): Rectangle height
         """
+        Rectangle.number_of_instances += 1
         self.__height = height
         self.__width = width
 
@@ -52,7 +56,10 @@ class Rectangle:
         Returns:
             Area of the rectangle.
         """
-        return self.__width * self.__height
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return (2 * self.__width) + (2 * self.__height)
 
     def perimeter(self):
         """
@@ -78,4 +85,16 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return 0
         else:
-            return ((("#" * self.__width) + '\n') * self.__height)
+            return (((Rectangle.print_symbol * self.__width) + '\n') * self.__height)
+
+    def __repr__(self):
+        """
+        Representation of the Rectangle
+        Returns:
+            The representation of the rectangle.
+        """
+        return ('Rectangle({},{})'.format(self.__width, self.__height))
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
