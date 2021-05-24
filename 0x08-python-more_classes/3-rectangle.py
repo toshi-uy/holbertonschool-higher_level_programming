@@ -75,4 +75,4 @@ class Rectangle:
         Returns:
             The String of the rectangle.
         """
-        return ((("#" * self.__width) + '\n' ) * self.__height)
+        return ((("#" * self.__width) + '\n') * self.__height)
