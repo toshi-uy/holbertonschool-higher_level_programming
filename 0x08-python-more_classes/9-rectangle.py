@@ -68,7 +68,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
-            return (2 * self.__width) + (2 * self.__height)
+            return (self.__width * self.__height)
 
     def perimeter(self):
         """
@@ -123,5 +123,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return Rectangle(size, size)
-
+        newRect = cls(size, size)
+        return newRect
