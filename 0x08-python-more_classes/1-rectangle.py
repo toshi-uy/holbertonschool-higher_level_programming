@@ -15,6 +15,10 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         docstring on the __init__ method.
+        
+        Note:
+            Do not include the `self` parameter in the ``Args`` section.
+
         Args:
             width (int): Rectangle width.
             heigth (int): Rectangle height
@@ -23,7 +27,7 @@ class Rectangle:
         self.__width = width
 
     @property
-    """ With property """"
+        """ With property """"
     def width(self):
         return self.__width
 
@@ -37,7 +41,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
 
     @property
-    """ height property """
+        """ height property """
     def height(self):
         return self.__height
 
