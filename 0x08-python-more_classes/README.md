@@ -6,7 +6,7 @@
 ## Tasks
 ### 0. Simple rectangle
 Write an empty class Rectangle that defines a rectangle:
-´´´
+```
 guillaume@ubuntu:~/0x08$ cat 0-main.py
 #!/usr/bin/python3
 Rectangle = __import__('0-rectangle').Rectangle
@@ -19,7 +19,7 @@ guillaume@ubuntu:~/0x08$ ./0-main.py
 <class '0-rectangle.Rectangle'>
 {}
 guillaume@ubuntu:~/0x08$ 
-´´´
+```
 ### 1. Real definition of a rectangle
 Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
 - Private instance attribute: width:
@@ -34,7 +34,8 @@ Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
         - if height is less than 0, raise a ValueError exception with the message height must be >= 0
 - Instantiation with optional width and height: def __init__(self, width=0, height=0):
 - You are not allowed to import any module
-´´´
+
+```
 guillaume@ubuntu:~/0x08$ cat 1-main.py
 #!/usr/bin/python3
 Rectangle = __import__('1-rectangle').Rectangle
@@ -50,7 +51,8 @@ guillaume@ubuntu:~/0x08$ ./1-main.py
 {'_Rectangle__height': 4, '_Rectangle__width': 2}
 {'_Rectangle__height': 3, '_Rectangle__width': 10}
 guillaume@ubuntu:~/0x08$ 
-´´´
+```
+
 ### 2. Area and Perimeter
 Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
 -   Private instance attribute:  `width`:
@@ -70,7 +72,8 @@ Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
 -   Public instance method:  `def perimeter(self):`  that returns the rectangle perimeter:
     -   if  `width`  or  `height`  is equal to  `0`, perimeter is equal to  `0`
 -   You are not allowed to import any module
-´´´
+```
+#!/usr/bin/python3
 guillaume@ubuntu:~/0x08$ cat 2-main.py
 #!/usr/bin/python3
 Rectangle = __import__('2-rectangle').Rectangle
@@ -89,7 +92,7 @@ Area: 8 - Perimeter: 12
 --
 Area: 30 - Perimeter: 26
 guillaume@ubuntu:~/0x08$ 
-´´´
+```
 ### 3. String representation
 Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
 -   Private instance attribute:  `width`:
@@ -143,7 +146,6 @@ Area: 8 - Perimeter: 12
 ##########
 <3-rectangle.Rectangle object at 0x7f92a75a2eb8>
 guillaume@ubuntu:~/0x08$ 
-
 ```
 **Object address can be different**
 
