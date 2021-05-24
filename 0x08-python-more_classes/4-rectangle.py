@@ -78,16 +78,11 @@ class Rectangle:
         Returns:
             The String of the rectangle.
         """
-        if self.__height == 0 or self.__width == 0:
-            return 0
-        else:
-            rect = ""
-            for j in range(self.__height):
-                for i in range(self.__width):
-                    rect += '#'
-                    if i == self.__width - 1 and j != self.__height - 1:
-                        rect += '\n'
-            return rect
+        rect = ""
+        if self.__height != 0 and self.__width != 0:
+            rect += "\n".join(("#" * self.__width) for j in range(self.__height))
+        return rect
+        
     def __repr__(self):
         """
         Representation of the Rectangle
