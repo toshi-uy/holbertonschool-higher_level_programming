@@ -78,5 +78,5 @@ class Rectangle:
         rect = ""
         if self.__height != 0 and self.__width != 0:
             rect += "\n".join(("#" * self.__width)
-                        for j in range(self.__height))
+                            for j in range(self.__height))
         return rect
