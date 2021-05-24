@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""defining a class Square"""
 
 
 class Rectangle:
     """
     Rectangle Class
+    Args:
+        width (int): Rectangle width.
+        heigth (int): Rectangle height
     """
 
     def __init__(self, width=0, height=0):
