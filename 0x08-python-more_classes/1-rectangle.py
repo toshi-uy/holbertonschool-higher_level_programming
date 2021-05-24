@@ -3,6 +3,7 @@
 Creating class for rectangle
 """
 
+
 class Rectangle:
     """
     Rectangle Class
