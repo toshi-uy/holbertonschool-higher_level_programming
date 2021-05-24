@@ -15,7 +15,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         docstring on the __init__ method.
-        
+
         Note:
             Do not include the `self` parameter in the ``Args`` section.
 
