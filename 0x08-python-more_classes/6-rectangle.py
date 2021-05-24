@@ -81,11 +81,10 @@ class Rectangle:
         Returns:
             The String of the rectangle.
         """
-        rect = ""
+        r = ""
         if self.__height != 0 and self.__width != 0:
-            rect += "\n".join(("#" * self.__width) \
-for j in range(self.__height))
-        return rect
+            r += '\n'.join(("#" * self.__width) for j in range(self.__height))
+        return r
 
     def __repr__(self):
         """
