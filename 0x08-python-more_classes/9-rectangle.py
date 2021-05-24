@@ -9,6 +9,8 @@ class Rectangle:
         width (int): Rectangle width.
         heigth (int): Rectangle height
     """
+    __width = 0
+    __height = 0
     number_of_instances = 0
     print_symbol = "#"
 
