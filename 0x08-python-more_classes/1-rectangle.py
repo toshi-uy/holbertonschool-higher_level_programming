@@ -27,8 +27,8 @@ class Rectangle:
         self.__width = width
 
     @property
-        """ With property """"
     def width(self):
+        """ With property """
         return self.__width
 
     @width.setter
@@ -41,8 +41,8 @@ class Rectangle:
             raise ValueError("width must be >= 0")
 
     @property
-        """ height property """
     def height(self):
+        """ height property """
         return self.__height
 
     @height.setter
