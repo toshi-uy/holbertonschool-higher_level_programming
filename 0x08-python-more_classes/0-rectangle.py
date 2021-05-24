@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 
-class Rectangle(self):
+class Rectangle:
     """Rectangle Class"""
     pass
