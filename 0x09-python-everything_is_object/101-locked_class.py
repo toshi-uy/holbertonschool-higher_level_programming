@@ -13,7 +13,7 @@ class Frozen(object):
             if key == item:
                 setIsOK = True
 
-        if setIsOK == True:
+        if setIsOK:
             object.__setattr__(self, key, value)
         else:
             raise AttributeError("%r object has no attribute %r"
