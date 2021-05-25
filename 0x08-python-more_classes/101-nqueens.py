@@ -60,5 +60,6 @@ def N_queen(n):
     return False
 
 N_queen(N)
-for i in board:
-    print(i)
+for i in range(0, N):
+        for j in range(0, N):
+            print(board[i][j])
