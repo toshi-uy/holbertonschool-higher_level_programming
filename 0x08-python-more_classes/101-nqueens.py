@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 The N queens puzzle is the challenge of placing N
 non-attacking queens on an N×N chessboard. This
 program solves the N queens problem.
@@ -7,7 +7,7 @@ program solves the N queens problem.
 Usage: nqueens N
 where N must be an integer greater or equal to 4
 ---------------------------------------------------
-The program will print every possible solution 
+The program will print every possible solution
 to the problem, one solution per line
 """
 
@@ -25,18 +25,21 @@ elif N < 4:
     exit(1)
 
 BOARD_SIZE = N
- 
+
+
 def under_attack(col, queens):
     return col in queens or \
-           any(abs(col - x) == len(queens) - i for i,x in enumerate(queens))
- 
+           any(abs(col - x) == len(queens) - i for i, x in enumerate(queens))
+
+
 def solve(n):
     solutions = [[]]
     for row in range(n):
         solutions = [solution + [i + 1]
-                       for solution in solutions
-                       for i in range(BOARD_SIZE)
-                       if not under_attack(i + 1, solution)]
+                    for solution in solutions
+                    for i in range(BOARD_SIZE)
+                    if not under_attack(i + 1, solution)]
     return solutions
 
-for answer in solve(BOARD_SIZE): print(list(enumerate(answer, start=1)))
+for answer in solve(BOARD_SIZE):
+    print(list(enumerate(answer, start=1)))
