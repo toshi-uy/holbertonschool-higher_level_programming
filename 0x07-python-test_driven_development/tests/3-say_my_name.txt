@@ -40,7 +40,7 @@ TypeError: first_name must be a string
 My name is  Bob
 
 >>> say_my_name("Bob")
-My name is Bob 
+My name is Bob  
 
 >>> say_my_name(str(80), "Bob")
 My name is 80 Bob
