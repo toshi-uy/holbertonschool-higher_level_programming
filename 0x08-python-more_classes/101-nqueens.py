@@ -40,4 +40,4 @@ def solve(n):
     return solutions
 
 index = 0
-for answer in solve(BOARD_SIZE): print(list(map(index, answer)))
+for answer in solve(BOARD_SIZE): print(list(map(answer, index)))
