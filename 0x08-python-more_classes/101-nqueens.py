@@ -38,5 +38,6 @@ def solve(n):
                        for i in range(BOARD_SIZE)
                        if not under_attack(i + 1, solution)]
     return solutions
- 
-for answer in solve(BOARD_SIZE): print(list(list(answer - 1)))
+
+index = 0
+for answer in solve(BOARD_SIZE): print(list(map(lambda sub: list(map(answer, sub)), index))
