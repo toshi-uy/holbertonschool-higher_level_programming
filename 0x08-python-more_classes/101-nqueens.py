@@ -62,4 +62,4 @@ def N_queen(n):
 N_queen(N)
 for i in range(0, N):
         for j in range(0, N):
-            print(board[i][j])
+            print(board)
