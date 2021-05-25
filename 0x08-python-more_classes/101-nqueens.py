@@ -33,10 +33,10 @@ def under_attack(col, queens):
 def solve(n):
     solutions = [[]]
     for row in range(n):
-        solutions = [solution+[i + 1]
+        solutions = [solution+[i]
                        for solution in solutions
                        for i in range(BOARD_SIZE)
-                       if not under_attack(i, solution)]
+                       if not under_attack(i + 1, solution)]
     return solutions
 
 print(solve(BOARD_SIZE))
