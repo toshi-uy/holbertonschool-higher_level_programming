@@ -39,4 +39,4 @@ def solve(n):
                        if not under_attack(i+1, solution)]
     return solutions
  
-for answer in solve(BOARD_SIZE): print(list(enumerate(answer, start=1)))
+for answer in solve(BOARD_SIZE): print((enumerate(answer, start=0)))
