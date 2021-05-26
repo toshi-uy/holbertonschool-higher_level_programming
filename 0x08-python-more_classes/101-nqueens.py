@@ -20,7 +20,7 @@ if type(sys.argv[1]) is not int:
     print("N must be a number")
     exit(1)
 N = int(sys.argv[1])
-elif N < 4:
+if N < 4:
     print("N must be at least 4")
     exit(1)
 
