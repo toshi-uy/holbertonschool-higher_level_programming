@@ -6,7 +6,7 @@ class MyList(list):
     """
     MyList class
     Attributes:
-    attr1(print_sorted): prints a sorted list 
+    attr1(print_sorted): prints a sorted list
     """
     def print_sorted(self):
         """prints sorted lists"""
