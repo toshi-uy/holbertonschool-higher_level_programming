@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """class Square"""
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry, Rectangle):
+class Square(Rectangle):
     """
     Square class that inherits from Rectangle, that inherits
     from BaseGeometry
@@ -20,4 +19,4 @@ class Square(BaseGeometry, Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        return super().__str__()
+        return ("[{}}] {}/{}".format(self.__class__, self.__size, self.__size))
