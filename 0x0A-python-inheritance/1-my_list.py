@@ -6,7 +6,11 @@ if __name__ == "__main__":
 
 
 class MyList(list):
-    """MyList class"""
+    """
+    MyList class
+    Attributes:
+    attr1(print_sorted): prints a sorted list 
+    """
 
     def print_sorted(self):
         """prints sorted lists"""
