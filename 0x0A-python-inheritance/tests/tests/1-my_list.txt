@@ -1,0 +1,18 @@
+Test File for 1-my_list.py
+============================
+
+Importing the function from the module:
+>>> add_integer = __import__('1-my_list').my_list
+
+Checking for module docstring:
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
+True
+
+Checking for function docstring:
+>>> f = __import__("1-my_list").my_list.__doc__
+>>> len(f) > 1
+True
+
+Basic Case (ordered)
+>>> my_list([])
