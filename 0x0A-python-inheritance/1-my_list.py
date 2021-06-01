@@ -3,5 +3,4 @@
 
 class MyList(list):
 	def print_sorted(self):
-		list1 = self.copy()
-		print(list1.sort())
+		print(self.sort())
