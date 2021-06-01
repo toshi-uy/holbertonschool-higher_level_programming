@@ -1,0 +1,15 @@
+Test File for 1-my_list.py
+============================
+
+Importing the function from the module:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Checking for module docstring:
+>>> m = __import__('7-base_geometry').__doc__
+>>> len(m) > 1
+True
+
+Checking for function docstring:
+>>> f = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(f) > 1
+True
