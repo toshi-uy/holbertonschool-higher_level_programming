@@ -3,4 +3,8 @@
 
 
 class BaseGeometry:
+	"""
+	empty class BaseGeometry
+	Args:
+	"""
 	pass
