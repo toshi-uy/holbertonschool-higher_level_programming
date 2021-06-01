@@ -13,3 +13,107 @@ Checking for function docstring:
 >>> f = __import__('7-base_geometry').BaseGeometry.__doc__
 >>> len(f) > 1
 True
+
+No argument passed
+>>> geo = BaseGeometry()
+>>> geo.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+One argument
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("hello")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Correct output
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("distance", 100)
+
+Two strings
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("distance", "radio")
+Traceback (most recent call last):
+...
+TypeError: distance must be an integer
+
+Empty string
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("", 100)
+
+Two integers
+>>> geo = BaseGeometry()
+>>> geo.integer_validator(100, 100)
+
+None string
+>>> geo = BaseGeometry()
+>>> geo.integer_validator(None, 100)
+
+Two Nones
+>>> geo = BaseGeometry()
+>>> geo.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+0 as value
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("area", 0)
+Traceback (most recent call last):
+...
+ValueError: area must be greater than 0
+
+Negative as value
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("area", -20)
+Traceback (most recent call last):
+...
+ValueError: area must be greater than 0
+
+area
+>>> geo = BaseGeometry()
+>>> geo.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+List as value
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("area", [100])
+Traceback (most recent call last):
+...
+TypeError: area must be an integer
+
+None as only argument
+>>> geo = BaseGeometry()
+>>> geo.integer_validator(None)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+True as value
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("area", True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: area must be an integer
+
+True as name
+>>> geo = BaseGeometry()
+>>> geo.integer_validator(True, 8)
+
+Tuple as a value
+>>> geo.integer_validator("line", (8,8))
+Traceback (most recent call last):
+...
+TypeError: line must be an integer
+
+dict as a value
+>>> geo.integer_validator("line", {8,8})
+Traceback (most recent call last):
+...
+TypeError: line must be an integer
