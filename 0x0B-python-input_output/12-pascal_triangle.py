@@ -7,12 +7,12 @@ def pascal_triangle(n):
     returns a list of lists of integers representing
     the Pascal’s triangle of n
     """
-    trow = []
+    triangle = []
     if n <= 0:
-        return trow
+        return []
     for line in range(1, n + 1):
         c = 1
         for i in range(1, line + 1):
-            trow.append(c)
+            triangle.append(c)
             c = int(c * (line - i) / i)
-    return trow[1:]
+    return triangle[1:]
