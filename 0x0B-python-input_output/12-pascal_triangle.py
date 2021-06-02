@@ -11,8 +11,8 @@ def pascal_triangle(n):
     if n <= 0:
         return trow
     for line in range(1, n + 1):
-    c = 1
-    for i in range(1, line + 1):
-        trow.append(c)
-        c = int(c * (line - i) / i)
+        c = 1
+        for i in range(1, line + 1):
+            trow.append(c)
+            c = int(c * (line - i) / i)
     return trow
