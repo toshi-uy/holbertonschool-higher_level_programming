@@ -15,6 +15,6 @@ def load_from_json_file(filename):
         js_list = open("add_item.json")
     except:
         js_list = []
-    for i in range(1, len(sys.argv)):
+    for i in sys.argv[1:]:
         js_list.append(sys.argv)
     save_to_json_file(js_list, "add_item.json")
