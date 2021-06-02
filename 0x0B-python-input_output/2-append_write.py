@@ -9,5 +9,4 @@ def append_write(filename="", text=""):
     """
     with open(filename, 'a+') as f:
         write_data = f.write(text)
-        if 
     return write_data
