@@ -17,4 +17,4 @@ def load_from_json_file(filename):
         js_list = []
     for i in sys.argv[1:]:
         js_list.append(i)
-    save_to_json_file(js_list, "add_item.json")
+        save_to_json_file(js_list, "add_item.json")
