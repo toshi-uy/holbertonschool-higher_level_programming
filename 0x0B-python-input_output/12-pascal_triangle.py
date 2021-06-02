@@ -2,9 +2,6 @@
 """ Task 12 """
 
 
-from typing import List
-
-
 def pascal_triangle(n):
     """
     returns a list of lists of integers representing
