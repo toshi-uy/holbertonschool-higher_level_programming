@@ -3,5 +3,5 @@
 import json
 
 def save_to_json_file(my_obj, filename):
-    with open(filename) as f:
-        return json.dump(my_obj, f)
+    with json.dump(my_obj, filename) as f:
+        return f
