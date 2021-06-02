@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" task 10 """
+""" task 11 """
 
 
 class Student:
@@ -29,3 +29,9 @@ class Student:
             return new_dict
         else:
             return self.__dict__
+    def reload_from_json(self, json):
+        """
+        replaces all attributes of the Student instance
+        """
+        for i in json:
+            self.__dict__.update({i: json[i]})
