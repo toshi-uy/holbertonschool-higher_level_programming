@@ -2,6 +2,7 @@
 """ Adv task 14 """
 import sys
 
+
 def printer():
     """printing method"""
     counter = 0
