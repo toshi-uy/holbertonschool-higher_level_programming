@@ -21,6 +21,7 @@ def printer():
             for key, val in sorted(codes.items()):
                 if val != 0:
                     print("{}: {}".format(key, val))
+            counter = 0
         counter += 1
     if counter < 9:
         print("File size: {}".format(size))
