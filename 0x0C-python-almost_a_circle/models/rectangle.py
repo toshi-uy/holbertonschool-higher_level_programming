@@ -68,3 +68,6 @@ class Rectangle(Base):
         """y setter"""
         self.coord_validator("y", value)
         self.__y = value
+
+    def area(self):
+        return (self.__width * self.__height)
