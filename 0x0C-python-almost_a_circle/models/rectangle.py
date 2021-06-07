@@ -70,9 +70,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ returns the area of the rectangle """
         return (self.__width * self.__height)
 
     def display(self):
+        """prints the rectangle, taking care of the positions"""
         for a in range(self.__y):
             print("")
         for i in range(self.__height):
@@ -83,4 +85,5 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """string representation of the class"""
         return ("[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}>".format(self.id, self.__x, self.__y, self.__width, self.__height))
