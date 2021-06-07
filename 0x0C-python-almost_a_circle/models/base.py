@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ 0x0C. Python - Almost a circle """
 import json
+from json import encoder
 
 
 class Base:
@@ -44,7 +45,7 @@ class Base:
         writes the JSON string representation of list_objs to a file
         """
         filename = "{}.json".format(cls.__name__)
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             jason = []
             if list_objs is not None:
                 for a in list_objs:
