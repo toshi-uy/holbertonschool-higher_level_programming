@@ -12,8 +12,8 @@ class Square(Rectangle):
 
     def __str__(self):
         return ("[Square] ({}) {}/{} - {}"
-                .format(self.id, self._Rectangle__x, self._Rectangle__y,
-                        self._Rectangle__width))
+                .format(self.id, self.x, self.y,
+                        self.size))
 
     @property
     def size(self):
@@ -28,7 +28,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """public method that assigns attributes"""
-        attrs = ["id", "size", "x", "y"]
         if len(args) != 0:
             self.id = args[0]
             if len(args) > 1:
@@ -44,4 +43,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle:"""
-        return {'id': self.id, 'size': self.size, 'x': self.x}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
