@@ -102,5 +102,5 @@ class Rectangle(Base):
                 self.__y = args[4]
         else:
             if kwargs is not None:
-                for key, value in kwargs.iteritems():
+                for key, value in kwargs.items():
                     setattr(self, key, value)
