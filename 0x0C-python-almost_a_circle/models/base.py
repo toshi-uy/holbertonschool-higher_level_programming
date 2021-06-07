@@ -2,6 +2,7 @@
 """ 0x0C. Python - Almost a circle """
 import json
 from json import encoder
+from os import stat
 
 
 class Base:
@@ -54,3 +55,11 @@ class Base:
             else:
                 list_objs = jason
                 json.dump(jason, f)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            json_string = []
+            return json.dumps(json_string)
+        else:
+            return json.dumps(json_string)
