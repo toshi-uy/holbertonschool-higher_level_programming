@@ -9,3 +9,6 @@ class Square(Rectangle):
         """ Constructor for Square """
         super().__init__(size, size, x, y, id)
         self.size = size
+
+    def __str__(self):
+        return ("[Square] (<{}>) <{}>/<{}> - <{}>".format(self.id, self.__x, self.__y, self.__width))
