@@ -79,4 +79,4 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
-        return ("[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}>".format(super(id()), self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}>".format(super().id(self), self.__x, self.__y, self.__width, self.__height))
