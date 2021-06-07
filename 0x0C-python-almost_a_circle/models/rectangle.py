@@ -87,3 +87,16 @@ class Rectangle(Base):
     def __str__(self):
         """string representation of the class"""
         return ("[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}>".format(self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """ assigns an argument to each attribute """
+        if len(args) != 0:
+            self.id = args[1]
+            if args[2]:
+                self.__width = args[2]
+            if args[3]:
+                self.__height = args[3]
+            if args[4]:
+                self.__x = args[4]
+            if args[5]:
+                self.__y = args[5]
