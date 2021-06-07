@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ 0x0C. Python - Almost a circle """
+import json
 
 
 class Base:
@@ -26,3 +27,13 @@ class Base:
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        static method that returns the JSON string representation
+        of list_dictionaries
+        """
+        if list_dictionaries is None:
+                return "[]"
+        return list_dictionaries.__dict__
