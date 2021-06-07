@@ -50,7 +50,7 @@ class Base:
                 for a in list_objs:
                     jason.append(cls.to_dictionary(a))
                 jason = Base.to_json_string(jason)
-                return json.dump(str(jason), f)
+                return json.dump(jason, f)
             else:
                 list_objs = jason
-                return json.dump(str(jason), f)
+                return json.dump(jason, f)
