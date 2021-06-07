@@ -12,3 +12,15 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+
+    def integer_validator(self, name, value):
+        """Public instance method that validates value"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+
+    def coord_validator(self, name, value):
+        """Public instance method that validates coordinates"""
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(name))
