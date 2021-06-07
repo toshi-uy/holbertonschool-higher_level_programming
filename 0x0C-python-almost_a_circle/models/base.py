@@ -59,7 +59,6 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         if json_string is None:
-            json_string = []
-            return json.dumps(json_string)
+            return []
         else:
-            return json.dumps(json_string)
+            return json.loads(json_string)
