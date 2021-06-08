@@ -108,11 +108,9 @@ class Base:
         filename = "{}.csv".format(cls.__name__)
         try:
             with open(filename, 'w') as f:
-                reader = csv.reader(delimiter=',')
-                for row in reader:
-                    if cls.__name__ == "Rectangle":
-                        dict_cvs = csv.DictReader(row)
-                        csv_list.append(dict_cvs)
+                reader = csv.reader(f)
+                dict_cvs = csv.DictReader(reader)
+                csv_list.append(dict_cvs)
                 obj = cls.create(**dict_cvs)
                 csv_list.append(obj)
         except:
