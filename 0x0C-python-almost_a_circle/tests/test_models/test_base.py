@@ -5,8 +5,8 @@ Unittest for base model
 import unittest
 import pep8
 from models.base import Base
-from models.Rectangle import Rectangle
-from models.square import Square
+# from models.Rectangle import Rectangle
+# from models.square import Square
 
 
 class Test_pep8(unittest.TestCase):
