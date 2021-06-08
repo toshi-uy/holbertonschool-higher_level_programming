@@ -111,10 +111,17 @@ class Base:
                 reader = csv.reader(f)
                 if cls.__name__ == "Rectangle":
                     fields = ["id", "width", "height", "x", "y"]
-                dict_cvs = csv.DictReader(reader, fieldnames=fields)
-                csv_list.append(dict_cvs)
-                obj = cls.create(**dict_cvs)
-                csv_list.append(obj)
-                return csv_list
+                    dict_cvs = csv.DictReader(reader, fieldnames=fields)
+                    csv_list.append(dict_cvs)
+                    obj = cls.create(**dict_cvs)
+                    csv_list.append(obj)
+                    return csv_list
+                elif cls.__name__ == "Square":
+                    fields = ["id", "size", "x", "y"]
+                    dict_cvs = csv.DictReader(reader, fieldnames=fields)
+                    csv_list.append(dict_cvs)
+                    obj = cls.create(**dict_cvs)
+                    csv_list.append(obj)
+                    return csv_list
         except:
             return csv_list
