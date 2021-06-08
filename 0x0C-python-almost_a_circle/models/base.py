@@ -112,8 +112,9 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     for row in reader:
                         dict_cvs = {
-                            "id": int(row[0]), "width": int(row[1]), "height": int(row[2]),
-                            "x": int(row[3]), "y": int(row[4])
+                            "id": int(row[0]), "width": int(row[1]),
+                            "height": int(row[2]), "x": int(row[3]),
+                            "y": int(row[4])
                         }
                         obj = cls.create(**dict_cvs)
                         csv_list.append(obj)
