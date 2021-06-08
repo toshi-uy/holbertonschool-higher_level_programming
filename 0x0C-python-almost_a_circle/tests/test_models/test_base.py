@@ -60,12 +60,12 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_string_as_id(self):
         """testing string as id"""
-        b = Base(12)
+        b = Base("hola")
         self.assertEqual(b.id, "hola")
 
     def test_True(self):
         """testing True"""
-        b = Base(12)
+        b = Base(True)
         self.assertEqual(b.id, True)
 
     def test_accesing_nb(self):
