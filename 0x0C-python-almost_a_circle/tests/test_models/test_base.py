@@ -97,6 +97,7 @@ class Test_Base_Model(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(b.__nb_objects)
 
+
 class JSON_Tests(unittest.TestCase):
     """Tests of Json"""
 
@@ -138,7 +139,7 @@ class JSON_Tests(unittest.TestCase):
         self.assertEqual(json_l[0],
                          {"id": 89, "width": 10, "height": 4, "x": 7, "y": 9})
         self.assertEqual(json_l[1],
-                         {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0})       
+                         {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0})
 
 if __name__ == '__main__':
     unittest.main()
