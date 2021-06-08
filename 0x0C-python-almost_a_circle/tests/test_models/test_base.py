@@ -35,5 +35,23 @@ class Test_Base_Model(unittest.TestCase):
         with self.assertRaises(TypeError):
             b = Base(1, 2)
 
+    def test_list_as_id(self):
+        """testing passing list as id"""
+        b = Base([12])
+        self.assertEqual(b.id, [12])
+        """testing long list as id"""
+        b = Base([1,2,3,4])
+        self.assertEqual(b.id, [1,2,3,4])
+        """testing empty list as id"""
+        self.assertEqual(b.id, [])
+
+    def test_string_as_id(self):
+        """testing string as id"""
+        self.assertEqual(b.id, "hola")
+
+    def test_True(self):
+        """testing True"""
+        self.assertEqual(b.id, True)
+
 if __name__ == '__main__':
     unittest.main()
