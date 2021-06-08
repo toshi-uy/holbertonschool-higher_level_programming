@@ -52,7 +52,7 @@ class Base:
                 for a in list_objs:
                     jason.append(cls.to_dictionary(a))
                 jason = Base.to_json_string(jason)
-                json.dump(jason, f)
+                f.write(jason)
             else:
                 json.dump(jason, f)
 
