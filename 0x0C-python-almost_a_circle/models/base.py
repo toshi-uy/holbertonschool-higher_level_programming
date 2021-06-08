@@ -3,7 +3,8 @@
 import json
 from json import encoder
 from os import stat
-
+import csv
+from sys import argv
 
 class Base:
     """ Clase Base """
@@ -85,3 +86,30 @@ class Base:
                 return jason
         except:
             return jason
+
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, 'w') as f:
+            writer = csv.writer(f, delimiter=',')
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        csv_list = []
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            with open(filename, 'w') as f:
+                reader = csv.reader(delimiter=',')
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        dict_cvs = csv.DictReader(row))
+                        csv_list.append(dict_cvs)
+                obj = cls.create(**dict_cvs)
+                csv_list.append(obj)
+        except:
+            return csv_list
