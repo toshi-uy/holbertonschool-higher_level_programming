@@ -130,4 +130,4 @@ class Base:
                         csv_list.append(obj)
                     return csv_list
         except:
-            return csv_list
+            return []
