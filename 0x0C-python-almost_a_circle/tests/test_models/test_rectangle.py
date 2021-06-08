@@ -41,12 +41,12 @@ class TestBaseDocs(unittest.TestCase):
 
     def test_inheritance(self):
         """Testing inheritance"""
-        Rectangle.reset_objects()
+        Rectangle.__nb_objects = 0
         self.assertEqual(issubclass(Rectangle, Base), True)
 
     def test_object(self):
         """Testing object inheritance"""
-        Rectangle.reset_objects()
+        Rectangle.__nb_objects = 0
         r1 = Rectangle(1, 1)
         self.assertEqual(isinstance(r1, Rectangle), True)
 
