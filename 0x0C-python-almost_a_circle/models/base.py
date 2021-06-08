@@ -113,5 +113,6 @@ class Base:
                 csv_list.append(dict_cvs)
                 obj = cls.create(**dict_cvs)
                 csv_list.append(obj)
+                return csv_list
         except:
             return csv_list
