@@ -62,4 +62,3 @@ class TestBaseDocs(unittest.TestCase):
 
 class Test_Rectangle(unittest.TestCase):
     """test cases for rectangle"""
-
