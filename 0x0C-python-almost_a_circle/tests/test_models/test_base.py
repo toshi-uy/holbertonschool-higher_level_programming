@@ -3,10 +3,20 @@
 Unittest for base model
 """
 import unittest
+import pep8
 from models.base import Base
 from models.Rectangle import Rectangle
 from models.square import Square
 
+
+class Test_pep8(unittest.TestCase):
+    """pep8 test cases class"""
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['*.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
 class Test_Base_Model(unittest.TestCase):
     """test cases for base model"""
@@ -52,6 +62,18 @@ class Test_Base_Model(unittest.TestCase):
     def test_True(self):
         """testing True"""
         self.assertEqual(b.id, True)
+
+    def test_accesing_nb(self):
+        """testing trying to access and print the nb"""
+        b = Base(10)
+        with self.assertRaises(AttributeError):
+            print(self.nb_objects)
+    def test_accesing__nb(self):
+        """testing trying to access and print the __nb"""
+        b = Base(10)
+        with self.assertRaises(AttributeError):
+            print(b.__nb_objects)
+
 
 if __name__ == '__main__':
     unittest.main()
