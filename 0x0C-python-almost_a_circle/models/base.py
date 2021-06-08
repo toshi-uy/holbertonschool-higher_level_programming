@@ -51,8 +51,7 @@ class Base:
             if list_objs is not None:
                 for a in list_objs:
                     jason.append(cls.to_dictionary(a))
-                jason = Base.to_json_string(jason)
-                f.write(jason)
+                f.write(cls.to_json_string(jason))
             else:
                 json.dump(jason, f)
 
