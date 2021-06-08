@@ -57,6 +57,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """returns an instance with all attributes already set"""
         if json_string is None or len(json_string) == 0:
             return []
         else:
@@ -71,3 +72,16 @@ class Base:
             dummy = cls(5, 5)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances """
+        jason = []
+        filename = "{}.json".format(cls.__name__)
+        if filename:
+            with open(filename) as f:
+                for objs in cls.from_json_string(f.read()):
+                    jason.append(cls.create(**objs))
+                return jason
+        else:
+            return jason
