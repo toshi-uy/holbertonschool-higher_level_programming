@@ -78,10 +78,10 @@ class Base:
         """returns a list of instances """
         jason = []
         filename = "{}.json".format(cls.__name__)
-        if filename:
+        try:
             with open(filename) as f:
                 for objs in cls.from_json_string(f.read()):
                     jason.append(cls.create(**objs))
                 return jason
-        else:
+        except:
             return jason
