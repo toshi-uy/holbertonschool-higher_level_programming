@@ -6,6 +6,7 @@ from os import stat
 import csv
 from sys import argv
 
+
 class Base:
     """ Clase Base """
     __nb_objects = 0
