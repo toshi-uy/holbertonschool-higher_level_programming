@@ -4,6 +4,8 @@ Unittest for base model
 """
 import unittest
 from models.base import Base
+from models.Rectangle import Rectangle
+from models.square import Square
 
 
 class Test_Base_Model(unittest.TestCase):
