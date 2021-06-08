@@ -4,12 +4,12 @@ Unittest for Rectangle model
 """
 import unittest
 import pep8
-import io
-import contextlib
 import json
 import inspect
 from models.base import Base
 from models.rectangle import Rectangle
+import io
+import contextlib
 
 
 class Test_pep8(unittest.TestCase):
@@ -50,5 +50,16 @@ class TestBaseDocs(unittest.TestCase):
         r1 = Rectangle(1, 1)
         self.assertEqual(isinstance(r1, Rectangle), True)
 
+    def test_class_docstring(self):
+        """Tests for the presence of a class docstring"""
+        self.assertTrue(len(Rectangle.__doc__) >= 1)
+
+    def test_func_docstrings(self):
+        """Tests for the presence of docstrings in all functions"""
+        for func in self.rect_funcs:
+            self.assertTrue(len(func[1].__doc__) >= 1)
+
+
 class Test_Rectangle(unittest.TestCase):
     """test cases for rectangle"""
+
