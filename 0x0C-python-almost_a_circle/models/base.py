@@ -108,7 +108,7 @@ class Base:
         filename = "{}.csv".format(cls.__name__)
         try:
             with open(filename, 'w') as f:
-                reader = csv.reader(f)
+                reader = csv.reader(f, delimiter=',')
                 if cls.__name__ == "Rectangle":
                     for row in reader:
                         dict_cvs = {
