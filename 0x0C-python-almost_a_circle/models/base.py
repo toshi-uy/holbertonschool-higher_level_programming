@@ -121,8 +121,8 @@ class Base:
                 elif cls.__name__ == "Square":
                     for row in reader:
                         dict_cvs = {
-                            "id": row[0], "width": row[1], "height": row[2],
-                            "x": row[3], "y": row[4]
+                            "id": row[0], "size": row[1],
+                            "x": row[2], "y": row[3]
                         }
                         obj = cls.create(**dict_cvs)
                         csv_list.append(obj)
