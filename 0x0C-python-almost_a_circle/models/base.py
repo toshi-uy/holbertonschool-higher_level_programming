@@ -107,7 +107,7 @@ class Base:
                 reader = csv.reader(delimiter=',')
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        dict_cvs = csv.DictReader(row))
+                        dict_cvs = csv.DictReader(row)
                         csv_list.append(dict_cvs)
                 obj = cls.create(**dict_cvs)
                 csv_list.append(obj)
