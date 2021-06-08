@@ -118,7 +118,7 @@ class Base:
                         }
                         obj = cls.create(**dict_cvs)
                         csv_list.append(obj)
-                        return csv_list
+                    return csv_list
                 elif cls.__name__ == "Square":
                     for row in reader:
                         dict_cvs = {
@@ -127,6 +127,6 @@ class Base:
                         }
                         obj = cls.create(**dict_cvs)
                         csv_list.append(obj)
-                        return csv_list
+                    return csv_list
         except:
             return csv_list
