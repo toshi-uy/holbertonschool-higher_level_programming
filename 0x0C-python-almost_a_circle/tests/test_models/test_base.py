@@ -5,8 +5,9 @@ Unittest for base model
 import unittest
 import pep8
 import inspect
+import json
 from models.base import Base
-# from models.Rectangle import Rectangle
+from models.Rectangle import Rectangle
 # from models.square import Square
 
 
@@ -97,6 +98,49 @@ class Test_Base_Model(unittest.TestCase):
         b = Base(10)
         with self.assertRaises(AttributeError):
             print(b.__nb_objects)
+
+class JSON_Tests(unittest.TestCase):
+    """Tests of Json"""
+
+    def test_to_json_string(self):
+        """Basic test of Json string"""
+        Base._Base__nb_objects = 0
+        dic1 = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
+        dic2 = {'x': 5, 'width': 8, 'id': 2, 'height': 9, 'y': 9}
+        json_s = Base.to_json_string([dic1, dic2])
+        self.assertTrue(type(json_s) is str)
+        d = json.loads(json_s)
+        self.assertEqual(d, [dic1, dic2])
+
+    def test_empty_to_json_string(self):
+        """Test empty dictionary"""
+        json_s = Base.to_json_string([])
+        self.assertTrue(type(json_s) is str)
+        self.assertEqual(json_s, "[]")
+
+    def test_None_to_json_String(self):
+        """None as dictionary"""
+        json_s = Base.to_json_string(None)
+        self.assertTrue(type(json_s) is str)
+        self.assertEqual(json_s, "[]")
+
+    def test_fjs_None(self):
+        """test None from Json string"""
+        self.assertEqual([], Base.from_json_string(None))
+
+    def test_from_json_string(self):
+        """testing from Json string"""
+        list_input = "[{'id': 89, 'width': 10, 'height': 4, 'x': 7, 'y': 9}, \
+            {'id': 7, 'width': 1, 'height': 7, 'x': 4, 'y': 0}]"
+        json_l = Base.from_json_string(list_input)
+        self.assertTrue(type(json_l) is list)
+        self.assertEqual(len(json_l), 2)
+        self.assertTrue(type(json_l[0]) is dict)
+        self.assertTrue(type(json_l[1]) is dict)
+        self.assertEqual(json_l[0],
+                         {"id": 89, "width": 10, "height": 4, "x": 7, "y": 9})
+        self.assertEqual(json_l[1],
+                         {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0})       
 
 if __name__ == '__main__':
     unittest.main()
