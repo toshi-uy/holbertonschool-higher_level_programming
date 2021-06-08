@@ -4,6 +4,7 @@ Unittest for base model
 """
 import unittest
 import pep8
+import inspect
 from models.base import Base
 # from models.Rectangle import Rectangle
 # from models.square import Square
@@ -18,6 +19,28 @@ class Test_pep8(unittest.TestCase):
                                         'models/base.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
+
+class TestBaseDocs(unittest.TestCase):
+    """Base document tests"""
+
+    @classmethod
+    def setUpClass(cls):
+        """Testing class"""
+        cls.base_funcs = inspect.getmembers(Base, inspect.isfunction)
+
+    def test_module_docstring(self):
+        """module docstring length"""
+        self.assertTrue(len(base.__doc__) >= 1)
+
+    def test_class_docstring(self):
+        """Class docstring length"""
+        self.assertTrue(len(Base.__doc__) >= 1)
+
+    def test_func_docstrings(self):
+        """Function docstring length"""
+        for func in self.base_funcs:
+            self.assertTrue(len(func[1].__doc__) >= 1)
 
 
 class Test_Base_Model(unittest.TestCase):
