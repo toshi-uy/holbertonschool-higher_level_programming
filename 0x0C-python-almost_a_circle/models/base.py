@@ -70,6 +70,6 @@ class Base:
             dummy = cls(5)
         elif cls.__name__ == "Rectangle":
             dummy = cls(5, 5)
-        dummy.update(dictionary)
+        dummy.update(**dictionary)
         return dummy
 
