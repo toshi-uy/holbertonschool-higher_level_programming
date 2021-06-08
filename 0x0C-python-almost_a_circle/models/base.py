@@ -87,6 +87,7 @@ class Base:
         except:
             return jason
 
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """serializes in CSV"""
         filename = "{}.csv".format(cls.__name__)
@@ -98,6 +99,7 @@ class Base:
                 elif cls.__name__ == "Square":
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
+    @classmethod
     def load_from_file_csv(cls):
         """deserializes in CSV"""
         csv_list = []
