@@ -72,4 +72,3 @@ class Base:
             dummy = cls(5, 5)
         dummy.update(**dictionary)
         return dummy
-
