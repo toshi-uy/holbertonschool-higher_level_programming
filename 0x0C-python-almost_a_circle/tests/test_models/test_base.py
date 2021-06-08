@@ -130,7 +130,7 @@ class JSON_Tests(unittest.TestCase):
     def test_from_json_string(self):
         """testing from Json string"""
         list_input = '[{"id": 89, "width": 10, "height": 4, "x": 7, "y": 9}, \
-{"id": 7, "width": 1, "height": 7, "x": 4, "y": 0}]'
+{"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}]'
         json_l = Base.from_json_string(list_input)
         self.assertTrue(type(json_l) is list)
         self.assertEqual(len(json_l), 2)
