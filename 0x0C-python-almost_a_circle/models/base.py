@@ -108,7 +108,7 @@ class Base:
         csv_list = []
         filename = "{}.csv".format(cls.__name__)
         try:
-            with open(filename ,'r') as f:
+            with open(filename) as f:
                 reader = csv.reader(f, delimiter=',')
                 for row in reader:
                     if cls.__name__ == "Rectangle":
