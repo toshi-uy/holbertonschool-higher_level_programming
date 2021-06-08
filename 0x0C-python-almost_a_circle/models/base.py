@@ -51,10 +51,10 @@ class Base:
             if list_objs is not None:
                 for a in list_objs:
                     jason.append(cls.to_dictionary(a))
-                json.dump(jason, f)
+                return json.dump(jason, f)
             else:
                 list_objs = jason
-                json.dump(jason, f)
+                return json.dump(jason, f)
 
     @staticmethod
     def from_json_string(json_string):
