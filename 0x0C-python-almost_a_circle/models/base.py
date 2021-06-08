@@ -96,10 +96,11 @@ class Base:
             writer = csv.writer(f, delimiter=',')
             for obj in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow(obj.id, obj.width,
-                                     obj.height, obj.x, obj.y)
+                    listr = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    writer.writerow(listr)
                 elif cls.__name__ == "Square":
-                    writer.writerow(obj.id, obj.size, obj.x, obj.y)
+                    lists = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(lists)
 
     @classmethod
     def load_from_file_csv(cls):
