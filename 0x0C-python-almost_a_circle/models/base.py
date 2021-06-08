@@ -124,7 +124,6 @@ class Base:
                             "id": row[0], "width": row[1], "height": row[2],
                             "x": row[3], "y": row[4]
                         }
-                        dict_cvs = csv.DictReader(reader, fieldnames=fields)
                         obj = cls.create(**dict_cvs)
                         csv_list.append(obj)
                         return csv_list
