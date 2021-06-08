@@ -111,7 +111,6 @@ class Base:
                 reader = csv.reader(f, delimiter=',')
                 if cls.__name__ == "Rectangle":
                     for row in reader:
-                        print(row)
                         dict_cvs = {
                             "id": int(row[0]), "width": int(row[1]), "height": int(row[2]),
                             "x": int(row[3]), "y": int(row[4])
@@ -121,7 +120,6 @@ class Base:
                         return csv_list
                 elif cls.__name__ == "Square":
                     for row in reader:
-                        print(row)
                         dict_cvs = {
                             "id": row[0], "size": row[1],
                             "x": row[2], "y": row[3]
