@@ -32,13 +32,13 @@ class Square(Rectangle):
             self.id = args[0]
             if len(args) > 1:
                 self.integer_validator("width", args[1])
-                self.__width = args[1]
+                self.size = args[1]
             if len(args) > 2:
                 self.coord_validator("x", args[2])
-                self.__x = args[2]
+                self.x = args[2]
             if len(args) > 3:
                 self.coord_validator("y", args[3])
-                self.__y = args[3]
+                self.y = args[3]
         else:
             if kwargs is not None:
                 for key, value in kwargs.items():
