@@ -291,11 +291,15 @@ class Test_Rectangle(unittest.TestCase):
         """testing update with kwars"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10, 2)
-        r1.update(x=1, height=2, y=3, width=30)
-        self.assertEqual(self.r1.width, 30)
-        self.assertEqual(self.r1.height, 2)
-        self.assertEqual(self.r1.x, 1)
-        self.assertEqual(self.r1.y, 3)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+        r1.update(height=10)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/10")
+        r1.update(width=11, x=2)
+        self.assertEqual(str(r), "[Rectangle] (1) 2/0 - 11/10")
+        r1.update(y=3, width=4, x=5, id=89)
+        self.assertEqual(str(r), "[Rectangle] (89) 5/3 - 4/10")
+        r1.update(x=6, height=7, y=8, width=9)
+        self.assertEqual(str(r), "[Rectangle] (89) 6/8 - 9/7")
 
     def test_update_too_many_args(self):
         """test too many args for update"""
