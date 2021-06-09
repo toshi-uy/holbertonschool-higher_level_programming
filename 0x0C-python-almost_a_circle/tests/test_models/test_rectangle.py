@@ -253,15 +253,15 @@ class Test_Rectangle(unittest.TestCase):
         r1 = Rectangle(10, 10, 10, 10, 8)
         r1.update(20, 100)
         r1.update(89)
-        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 1/1")
+        self.assertEqual(str(r1), "[Rectangle] (89) 0/0 - 1/1")
         r1.update(89, 2)
-        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/1")
+        self.assertEqual(str(r1), "[Rectangle] (89) 0/0 - 2/1")
         r1.update(89, 2, 3)
-        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/3")
+        self.assertEqual(str(r1), "[Rectangle] (89) 0/0 - 2/3")
         r1.update(89, 2, 3, 4)
-        self.assertEqual(str(r), "[Rectangle] (89) 4/0 - 2/3")
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/0 - 2/3")
         r1.update(89, 2, 3, 4, 5)
-        self.assertEqual(str(r), "[Rectangle] (89) 4/5 - 2/3")
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
     def test_update_args_setter(self):
         """tests that the update method uses setter with *args"""
@@ -291,15 +291,15 @@ class Test_Rectangle(unittest.TestCase):
         """testing update with kwars"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10, 2)
-        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+        self.assertEqual(str(r1), "[Rectangle] (1) 0/0 - 1/1")
         r1.update(height=10)
-        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/10")
+        self.assertEqual(str(r1), "[Rectangle] (1) 0/0 - 1/10")
         r1.update(width=11, x=2)
-        self.assertEqual(str(r), "[Rectangle] (1) 2/0 - 11/10")
+        self.assertEqual(str(r1), "[Rectangle] (1) 2/0 - 11/10")
         r1.update(y=3, width=4, x=5, id=89)
-        self.assertEqual(str(r), "[Rectangle] (89) 5/3 - 4/10")
+        self.assertEqual(str(r1), "[Rectangle] (89) 5/3 - 4/10")
         r1.update(x=6, height=7, y=8, width=9)
-        self.assertEqual(str(r), "[Rectangle] (89) 6/8 - 9/7")
+        self.assertEqual(str(r1), "[Rectangle] (89) 6/8 - 9/7")
 
     def test_update_too_many_args(self):
         """test too many args for update"""
