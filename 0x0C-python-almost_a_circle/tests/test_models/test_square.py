@@ -281,25 +281,6 @@ class Test_Square(unittest.TestCase):
         s.update(hello=2)
         self.assertEqual(str(s), "[Square] (1) 0/0 - 1")
 
-    def test_to_dict(self):
-        """test regular to_dictionary"""
-        d1 = self.sq1.to_dictionary()
-        self.assertEqual({"id": 1, "size": 8, "x": 8, "y": 0}, d1)
-        d2 = self.sq2.to_dictionary()
-        self.assertEqual({"id": 2, "size": 2, "x": 3, "y": 0}, d2)
-        d3 = self.sq3.to_dictionary()
-        self.assertEqual({"id": 3, "size": 4, "x": 5, "y": 6}, d3)
-        d4 = self.sq4.to_dictionary()
-        self.assertEqual({"id": 10, "size": 7, "x": 8, "y": 9}, d4)
-        self.assertTrue(type(d1) is dict)
-        self.assertTrue(type(d2) is dict)
-        self.assertTrue(type(d3) is dict)
-        self.assertTrue(type(d4) is dict)
-        s = Square(1, 1, 1, 1)
-        s.update(**d4)
-        self.assertEqual(str(s), str(self.sq4))
-        self.assertNotEqual(s, self.sq4)
-
     def test_save_to_file(self):
         """test regular use of save_to_file"""
         s1 = Square(1, 1, 1, 1)
