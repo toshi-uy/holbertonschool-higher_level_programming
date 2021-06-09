@@ -336,7 +336,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual({"id": 1, "size": 8, "x": 8, "y": 0},
                          d1)
         d2 = self.sq2.to_dictionary()
-        self.assertEqual({"id": 8, "size": 8, "x": 6, "y": 7},
+        self.assertEqual({"id": 2, "size": 7, "x": 2, "y": 4},
                          d2)
         self.assertTrue(type(d1) is dict)
         self.assertTrue(type(d2) is dict)
