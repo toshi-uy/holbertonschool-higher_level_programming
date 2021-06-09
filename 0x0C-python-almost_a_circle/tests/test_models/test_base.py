@@ -36,10 +36,6 @@ class TestBaseDocs(unittest.TestCase):
         """Class docstring length"""
         self.assertTrue(len(Base.__doc__) >= 1)
 
-    def test_func_docstrings(self):
-        """Tests for the presence of docstrings in all functions"""
-        for func in self.rect_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
 
 
 class Test_Base_Model(unittest.TestCase):
