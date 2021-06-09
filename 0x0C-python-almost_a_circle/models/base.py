@@ -56,7 +56,7 @@ class Base:
                     jason.append(cls.to_dictionary(a))
                 f.write(cls.to_json_string(jason))
             else:
-                json.dump(jason, f)
+                f.write(cls.to_json_string(jason))
 
     @staticmethod
     def from_json_string(json_string):
