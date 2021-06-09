@@ -347,3 +347,73 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle(1, 1, 0, 0, 1)
         r.update(hello=2)
         self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+
+    def test_to_dict(self):
+        """test regular to_dictionary"""
+        d1 = self.r1.to_dictionary()
+        self.assertEqual({"id": 1, "width": 10, "height": 10, "x": 0, "y": 0},
+                         d1)
+        d2 = self.r2.to_dictionary()
+        self.assertEqual({"id": 2, "width": 2, "height": 3, "x": 4, "y": 0},
+                         d2)
+        d3 = self.r3.to_dictionary()
+        self.assertEqual({"id": 9, "width": 5, "height": 6, "x": 7, "y": 8},
+                         d3)
+        d4 = self.r4.to_dictionary()
+        self.assertEqual({"id": 3, "width": 11, "height": 12, "x": 13,
+                          "y": 14}, d4)
+        self.assertTrue(type(d1) is dict)
+        self.assertTrue(type(d2) is dict)
+        self.assertTrue(type(d3) is dict)
+        self.assertTrue(type(d4) is dict)
+        r = Rectangle(1, 1, 1, 1, 1)
+        r.update(**d4)
+        self.assertEqual(str(r), str(self.r4))
+        self.assertNotEqual(r, self.r4)
+
+    def test_save_to_file(self):
+        """test regular use of save_to_file"""
+        r1 = Rectangle(1, 1, 1, 1, 1)
+        r2 = Rectangle(2, 2, 2, 2, 2)
+        l = [r1, r2]
+        Rectangle.save_to_file(l)
+        with open("Rectangle.json", "r") as f:
+            ls = [r1.to_dictionary(), r2.to_dictionary()]
+            self.assertEqual(json.dumps(ls), f.read())
+
+    def test_stf_empty(self):
+        """test save_to_file with empty list"""
+        l = []
+        Rectangle.save_to_file(l)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_create(self):
+        """test normal use of create"""
+        r1 = {"id": 2, "width": 2, "height": 3, "x": 4, "y": 0}
+        r2 = {"id": 9, "width": 5, "height": 6, "x": 7, "y": 8}
+        r1c = Rectangle.create(**r1)
+        r2c = Rectangle.create(**r2)
+        self.assertEqual("[Rectangle] (2) 4/0 - 2/3", str(r1c))
+        self.assertEqual("[Rectangle] (9) 7/8 - 5/6", str(r2c))
+        self.assertIsNot(r1, r1c)
+        self.assertIsNot(r2, r2c)
+        self.assertNotEqual(r1, r1c)
+        self.assertNotEqual(r2, r2c)
+
+    def test_load_from_file_no_file(self):
+        """Checks use of load_from_file with no file"""
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        self.assertEqual(Rectangle.load_from_file(), [])
+
+    def test_load_from_file_empty_file(self):
+        """Checks use of load_from_file with empty file"""
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        open("Rectangle.json", 'a').close()
+        self.assertEqual(Rectangle.load_from_file(), [])
