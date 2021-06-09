@@ -252,11 +252,11 @@ class Test_Rectangle(unittest.TestCase):
         """testing update with args"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 10, 10, 10, 8)
-        r1.update(89, 100)
-        self.assertEqual(self.r1.id, 89)
+        r1.update(8, 100)
+        self.assertEqual(self.r1.id, 8)
         self.assertEqual(self.r1.width, 100)
-        r1.update(89, 100, 80)
-        self.assertEqual(self.r1.id, 89)
+        r1.update(8, 100, 80)
+        self.assertEqual(self.r1.id, 8)
         self.assertEqual(self.r1.width, 100)
         self.assertEqual(self.r1.height, 80)
 
