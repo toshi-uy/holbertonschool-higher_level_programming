@@ -216,7 +216,6 @@ class Test_Square(unittest.TestCase):
         sq1.update(89)
         self.assertEqual(str(sq1), "[Square] (89) 2/3 - 10")
 
-
     def test_update_args_setter(self):
         """tests that the update method uses setter with *args"""
         s = Square(1, 0, 0, 1)
