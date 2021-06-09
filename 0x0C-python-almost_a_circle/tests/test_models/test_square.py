@@ -93,7 +93,7 @@ class Test_Square(unittest.TestCase):
 
     def test_x(self):
         """Test for functioning x"""
-        self.assertEqual(self.sq1.x, 0)
+        self.assertEqual(self.sq1.x, 8)
         self.assertEqual(self.sq2.x, 4)
         self.assertEqual(self.sq3.x, 7)
         self.assertEqual(self.sq4.x, 13)
@@ -126,28 +126,28 @@ class Test_Square(unittest.TestCase):
     def test_x_noint(self):
         """Test for x error in type"""
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r = Square(1, 2, "string")
+            r = Square(1, "string")
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r = Square(1, 2, True, 1)
+            r = Square(1, True, 1)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r = Square(1, 2, [9], 1)
+            r = Square(1, [9], 1)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r = Square(1, 2, (2, 1), 1)
+            r = Square(1, (2, 1), 1)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r = Square(1, 2, 2.0)
+            r = Square(1, 2.0)
 
     def test_y_noint(self):
         """Test for y error in type"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Square(1, 2, 3, "string")
+            r = Square(1, 3, "string")
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Square(1, 2, 3, True)
+            r = Square(1, 3, True)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Square(1, 2, 3, [9])
+            r = Square(1, 3, [9])
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Square(1, 2, 3, (2, 1))
+            r = Square(1, 3, (2, 1))
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Square(1, 2, 3, 2.0)
+            r = Square(1, 3, 2.0)
 
     def test_size_valueerror(self):
         """Test ints <= 0 for size"""
@@ -159,12 +159,12 @@ class Test_Square(unittest.TestCase):
     def test_x_valueerror(self):
         """Test ints < 0 for x"""
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            r = Square(1, 1, -1)
+            r = Square(1, -1)
 
     def test_y_valueerror(self):
         """Test ints <= 0 for y"""
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            r = Square(1, 1, 1, -1)
+            r = Square(1, 1, -1)
 
     def test_area(self):
         """test area"""
@@ -238,7 +238,7 @@ class Test_Square(unittest.TestCase):
         """test too many args for update"""
         s = Square(1, 0, 0, 1)
         s.update(1, 1, 1, 1, 2)
-        self.assertEqual(str(s), "[Square] (1) 1/1 - 1")
+        self.assertEqual(str(s), "[Square] (1) 0/0 - 1")
 
     def test_update_no_args(self):
         """test no args for update"""
@@ -289,7 +289,7 @@ class Test_Square(unittest.TestCase):
         Square.save_to_file(l)
         with open("Square.json", "r") as f:
             ls = [s1.to_dictionary(), sq2.to_dictionary()]
-            self.aqssertEqual(json.dumps(ls), f.read())
+            self.assertEqual(json.dumps(ls), f.read())
 
     def test_stf_empty(self):
         """test save_to_file with empty list"""
