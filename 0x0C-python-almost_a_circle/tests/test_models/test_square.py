@@ -294,7 +294,7 @@ class Test_Square(unittest.TestCase):
         s.update(hello=2)
         self.assertEqual(str(s), "[Square] (1) 0/0 - 1")
 
-   def test_to_dict(self):
+    def test_to_dict(self):
         """test regular to_dictionary"""
         d1 = self.s1.to_dictionary()
         self.assertEqual({"id": 1, "size": 1, "x": 0, "y": 0}, d1)
