@@ -376,7 +376,7 @@ class Test_Rectangle(unittest.TestCase):
         r1 = Rectangle(1, 1, 1, 1, 1)
         r2 = Rectangle(2, 2, 2, 2, 2)
         r3 = Rectangle(None)
-        l = [r1, r2]
+        l = [r1, r2, r3]
         Rectangle.save_to_file(l)
         with open("Rectangle.json", "r") as f:
             ls = [r1.to_dictionary(), r2.to_dictionary(), r3.to_dictionary()]
