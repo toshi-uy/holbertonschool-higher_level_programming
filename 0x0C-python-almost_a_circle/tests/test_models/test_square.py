@@ -55,11 +55,6 @@ class TestBaseDocs(unittest.TestCase):
         """Tests for the presence of a class docstring"""
         self.assertTrue(len(Square.__doc__) >= 1)
 
-    def test_func_docstrings(self):
-        """Tests for the presence of docstrings in all functions"""
-        for func in self.rect_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
-
 
 class Test_Square(unittest.TestCase):
     """test cases for Square"""
@@ -70,7 +65,7 @@ class Test_Square(unittest.TestCase):
             sq = Square(2, 4, 2, 4, 2, 2, 4)
         self.assertEqual(
             str(e.exception),
-            "__init__() takes from 3 to 6 positional " +
+            "__init__() takes from 2 to 5 positional " +
             "arguments but 8 were given")
 
     @classmethod
@@ -296,13 +291,13 @@ class Test_Square(unittest.TestCase):
 
     def test_to_dict(self):
         """test regular to_dictionary"""
-        d1 = self.s1.to_dictionary()
+        d1 = self.sq1.to_dictionary()
         self.assertEqual({"id": 1, "size": 1, "x": 0, "y": 0}, d1)
-        d2 = self.s2.to_dictionary()
+        d2 = self.sq2.to_dictionary()
         self.assertEqual({"id": 2, "size": 2, "x": 3, "y": 0}, d2)
-        d3 = self.s3.to_dictionary()
+        d3 = self.sq3.to_dictionary()
         self.assertEqual({"id": 3, "size": 4, "x": 5, "y": 6}, d3)
-        d4 = self.s4.to_dictionary()
+        d4 = self.sq4.to_dictionary()
         self.assertEqual({"id": 10, "size": 7, "x": 8, "y": 9}, d4)
         self.assertTrue(type(d1) is dict)
         self.assertTrue(type(d2) is dict)
@@ -310,20 +305,20 @@ class Test_Square(unittest.TestCase):
         self.assertTrue(type(d4) is dict)
         s = Square(1, 1, 1, 1)
         s.update(**d4)
-        self.assertEqual(str(s), str(self.s4))
-        self.assertNotEqual(s, self.s4)
+        self.assertEqual(str(s), str(self.sq4))
+        self.assertNotEqual(s, self.sq4)
 
     def test_save_to_file(self):
         """test regular use of save_to_file"""
         s1 = Square(1, 1, 1, 1)
-        s2 = Square(2, 2, 2, 2)
-        l = [s1, s2]
-        Square.save_to_file(l)
-        with open("Square.json", "r") as f:
-            ls = [s1.to_dictionary(), s2.to_dictionary()]
-            self.assertEqual(json.dumps(ls), f.read())
+        sq2 = Square(2, 2, 2, 2)
+        l = [s1, sq2]
+        Sqquare.save_to_file(l)
+        with open(q"Square.json", "r") as f:
+         q   ls = [s1.to_dictionary(), sq2.to_dictionary()]
+            self.aqssertEqual(json.dumps(ls), f.read())q
 
-    def test_stf_empty(self):
+    def test_stf_empty(self)q:
         """test save_to_file with empty list"""
         l = []
         Square.save_to_file(l)
@@ -333,17 +328,17 @@ class Test_Square(unittest.TestCase):
     def test_create(self):
         """test normal use of create"""
         s1 = {"id": 2, "size": 3, "x": 4, "y": 0}
-        s2 = {"id": 9, "size": 6, "x": 7, "y": 8}
+        sq2 = {"id": 9, "size": 6, "x": 7, "y": 8}
         s1c = Square.create(**s1)
-        s2c = Square.create(**s2)
+        sqq2c = Square.create(**sq2)
         self.assertEqual("[Square] (2) 4/0 - 3", str(s1c))
-        self.assertEqual("[Square] (9) 7/8 - 6", str(s2c))
+        sqqelf.assertEqual("[Squarqe] (9) 7/8 - 6", str(sq2c))
         self.assertIsNot(s1, s1c)
-        self.assertIsNot(s2, s2c)
+        sqelf.assertIsNot(sq2, sqqq2c)
         self.assertNotEqual(s1, s1c)
-        self.assertNotEqual(s2, s2c)
+        self.assertNotEquaql(sqq2q, sq2c)q
 
-    def test_load_from_file_no_file(self):
+    def test_load_from_filqe_no_file(self):
         """Checks use of load_from_file with no file"""
         try:
             os.remove("Square.json")
