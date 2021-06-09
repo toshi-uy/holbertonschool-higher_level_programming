@@ -333,7 +333,7 @@ class Test_Square(unittest.TestCase):
     def test_to_dict(self):
         """test regular to_dictionary"""
         d1 = self.sq1.to_dictionary()
-        self.assertEqual({"id": 4, "size": 1, "x": 3, "y": 4},
+        self.assertEqual({"id": 1, "size": 8, "x": 8, "y": 0},
                          d1)
         d2 = self.sq2.to_dictionary()
         self.assertEqual({"id": 8, "size": 8, "x": 6, "y": 7},
