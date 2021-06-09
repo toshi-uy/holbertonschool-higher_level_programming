@@ -290,7 +290,7 @@ class Test_Rectangle(unittest.TestCase):
     def test_update_1(self):
         """testing update with kwars"""
         Base._Base__nb_objects = 0
-        r1 = Rectangle(10, 10, 10, 10, 2)
+        r1 = Rectangle(1, 1, 0, 0, 1)
         self.assertEqual(str(r1), "[Rectangle] (1) 0/0 - 1/1")
         r1.update(height=10)
         self.assertEqual(str(r1), "[Rectangle] (1) 0/0 - 1/10")
