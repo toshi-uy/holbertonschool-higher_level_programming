@@ -215,8 +215,7 @@ class Test_Square(unittest.TestCase):
         sq1 = Square(10, 2, 3, 8)
         sq1.update(89)
         self.assertEqual(str(sq1), "[Square] (89) 2/3 - 10")
-        sq1.update(7, 20, 8, 8)
-        self.assertEqual(str(sq1), "[Square] (7) 8/8 - 20")
+
 
     def test_update_args_setter(self):
         """tests that the update method uses setter with *args"""
@@ -277,12 +276,6 @@ class Test_Square(unittest.TestCase):
         with self.assertRaises(ValueError):
             s.update(y=-1)
 
-    def test_mix_args_kwargs(self):
-        """tests output for mixed args and kwargs"""
-        s = Square(1, 0, 0, 1)
-        s.update(2, 2, 2, 2, size=3, x=3, y=3, id=3)
-        self.assertEqual(str(s), "[Square] (2) 2/2 - 2")
-
     def test_extra_kwargs(self):
         """tests for random kwargs"""
         s = Square(1, 0, 0, 1)
@@ -292,7 +285,7 @@ class Test_Square(unittest.TestCase):
     def test_to_dict(self):
         """test regular to_dictionary"""
         d1 = self.sq1.to_dictionary()
-        self.assertEqual({"id": 1, "size": 1, "x": 0, "y": 0}, d1)
+        self.assertEqual({"id": 1, "size": 8, "x": 8, "y": 0}, d1)
         d2 = self.sq2.to_dictionary()
         self.assertEqual({"id": 2, "size": 2, "x": 3, "y": 0}, d2)
         d3 = self.sq3.to_dictionary()
