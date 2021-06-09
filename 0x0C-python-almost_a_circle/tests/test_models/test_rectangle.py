@@ -251,7 +251,7 @@ class Test_Rectangle(unittest.TestCase):
     def test_update_0(self):
         """testing update with args"""
         Base._Base__nb_objects = 0
-        r1 = Rectangle(10, 10, 10, 10)
+        r1 = Rectangle(10, 10, 10, 10, 8)
         r1.update(89)
         self.assertEqual(self.r1.id, 89)
         r1.update(89, 100)
@@ -289,9 +289,9 @@ class Test_Rectangle(unittest.TestCase):
     def test_update_1(self):
         """testing update with kwars"""
         Base._Base__nb_objects = 0
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=3, width=4)
-        self.assertEqual(self.r1.width, 4)
+        r1 = Rectangle(10, 10, 10, 10, 2)
+        r1.update(x=1, height=2, y=3, width=30)
+        self.assertEqual(self.r1.width, 30)
         self.assertEqual(self.r1.height, 2)
         self.assertEqual(self.r1.x, 1)
         self.assertEqual(self.r1.y, 3)
