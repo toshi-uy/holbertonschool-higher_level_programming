@@ -252,12 +252,16 @@ class Test_Rectangle(unittest.TestCase):
         """testing update with args"""
         r1 = Rectangle(10, 10, 10, 10, 8)
         r1.update(20, 100)
-        self.assertEqual(self.r1.id, 20)
-        self.assertEqual(self.r1.width, 100)
-        r1.update(7, 100, 80)
-        self.assertEqual(self.r1.id, 7)
-        self.assertEqual(self.r1.width, 100)
-        self.assertEqual(self.r1.height, 80)
+        r1.update(89)
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 1/1")
+        r1.update(89, 2)
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/1")
+        r1.update(89, 2, 3)
+        self.assertEqual(str(r), "[Rectangle] (89) 0/0 - 2/3")
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(str(r), "[Rectangle] (89) 4/0 - 2/3")
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(r), "[Rectangle] (89) 4/5 - 2/3")
 
     def test_update_args_setter(self):
         """tests that the update method uses setter with *args"""
