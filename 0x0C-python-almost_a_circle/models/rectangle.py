@@ -112,8 +112,8 @@ class Rectangle(Base):
                 for key, value in kwargs.items():
                     if key == 'width':
                         self.integer_validator("width", key)
-                    if key == 'width':
-                        self.integer_validator("width", key)
+                    if key == 'height':
+                        self.integer_validator("height", key)
                     if key == 'x':
                         self.coord_validator("x", key)
                     if key == 'y':
