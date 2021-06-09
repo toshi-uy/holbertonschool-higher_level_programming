@@ -313,12 +313,12 @@ class Test_Square(unittest.TestCase):
         s1 = Square(1, 1, 1, 1)
         sq2 = Square(2, 2, 2, 2)
         l = [s1, sq2]
-        Sqquare.save_to_file(l)
+        Square.save_to_file(l)
         with open("Square.json", "r") as f:
             ls = [s1.to_dictionary(), sq2.to_dictionary()]
             self.aqssertEqual(json.dumps(ls), f.read())
 
-    def test_stf_empty(self)q:
+    def test_stf_empty(self):
         """test save_to_file with empty list"""
         l = []
         Square.save_to_file(l)
