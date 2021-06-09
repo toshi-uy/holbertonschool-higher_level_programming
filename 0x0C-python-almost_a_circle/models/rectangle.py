@@ -93,7 +93,8 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ assigns an argument to each attribute """
         if len(args) != 0:
-            self.id = args[0]
+            if len(args) > 0:
+                self.id = args[0]
             if len(args) > 1:
                 self.integer_validator("width", args[1])
                 self.__width = args[1]

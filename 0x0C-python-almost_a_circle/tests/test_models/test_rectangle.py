@@ -170,15 +170,15 @@ class Test_Rectangle(unittest.TestCase):
     def test_y_noint(self):
         """Test for y error in type"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(1, 2, "string")
+            r = Rectangle(1, 2, 3, "string")
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(1, 2, True)
+            r = Rectangle(1, 2, 3, True)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(1, 2, [9])
+            r = Rectangle(1, 2, 3, [9])
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(1, 2, (2, 1))
+            r = Rectangle(1, 2, 3, (2, 1))
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(1, 2, 2.0)
+            r = Rectangle(1, 2, 3, 2.0)
 
     def test_width_valueerror(self):
         """Test ints <= 0 for width"""
