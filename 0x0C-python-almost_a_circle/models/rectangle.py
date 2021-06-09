@@ -113,7 +113,7 @@ class Rectangle(Base):
                     if key == 'width':
                         self.integer_validator("width", key)
                     if key == 'width':
-                       self.integer_validator("width", key)
+                        self.integer_validator("width", key)
                     if key == 'x':
                         self.coord_validator("x", key)
                     if key == 'y':
