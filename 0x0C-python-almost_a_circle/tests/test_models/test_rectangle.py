@@ -246,10 +246,7 @@ class Test_Rectangle(unittest.TestCase):
     def test___str__(self):
         """testing str"""
         r1 = Rectangle(4, 6, 2, 1, 12)
-        f = io.StringIO()
-        with contextlib.redirect_stdout(f):
-            print(r1)
-        self.assertEqual(f.getvalue(), "[Rectangle] (12) 2/1 - 4/6")
+        self.assertEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
 
     def test_update_0(self):
         """testing update with args"""
@@ -265,6 +262,30 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(self.r1.width, 100)
         self.assertEqual(self.r1.height, 80)
 
+    def test_update_args_setter(self):
+        """tests that the update method uses setter with *args"""
+        r = Rectangle(1, 1, 0, 0, 1)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r.update(1, "hello")
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r.update(1, 1, "hello")
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r.update(1, 1, 1, "hello")
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r.update(1, 1, 1, 1, "hello")
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r.update(1, 0)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r.update(1, -1)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r.update(1, 1, 0)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r.update(1, 1, -1)
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r.update(1, 1, 1, -1)
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r.update(1, 1, 1, 1, -1)
+
     def test_update_1(self):
         """testing update with kwars"""
         Base._Base__nb_objects = 0
@@ -274,3 +295,52 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(self.r1.height, 2)
         self.assertEqual(self.r1.x, 1)
         self.assertEqual(self.r1.y, 3)
+
+    def test_update_too_many_args(self):
+        """test too many args for update"""
+        r = Rectangle(1, 1, 0, 0, 1)
+        r.update(1, 1, 1, 1, 1, 2)
+        self.assertEqual(str(r), "[Rectangle] (1) 1/1 - 1/1")
+
+    def test_update_no_args(self):
+        """test no args for update"""
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update()
+        self.assertEqual(str(r), "[Rectangle] (10) 10/10 - 10/10")
+
+    def test_update_kwargs_setter(self):
+        """tests that the update method uses setter with **kwargs"""
+        r = Rectangle(1, 1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            r.update(width="hello")
+        with self.assertRaises(TypeError):
+            r.update(height="hello")
+        with self.assertRaises(TypeError):
+            r.update(x="hello")
+        with self.assertRaises(TypeError):
+            r.update(y="hello")
+        with self.assertRaises(ValueError):
+            r.update(width=-1)
+        with self.assertRaises(ValueError):
+            r.update(width=0)
+        with self.assertRaises(ValueError):
+            r.update(height=-1)
+        with self.assertRaises(ValueError):
+            r.update(height=0)
+        with self.assertRaises(ValueError):
+            r.update(x=-1)
+        with self.assertRaises(ValueError):
+            r.update(y=-1)
+
+    def test_args_and_kwargs(self):
+        """testing passing args and kwargs in update"""
+        r1 = Rectangle(1, 1, 1, 1, 1)
+        r1.update(2, 2, 2, 2, 2, width=3, height=3, x=3, y=3, id=3)
+        self.assertEqual(str(r1), "[Rectangle] (2) 2/2 - 2/2")
+
+    def test_unknown_kwarg(self):
+        """tests for random kwargs"""
+        r = Rectangle(1, 1, 0, 0, 1)
+        r.update(hello=2)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
+
