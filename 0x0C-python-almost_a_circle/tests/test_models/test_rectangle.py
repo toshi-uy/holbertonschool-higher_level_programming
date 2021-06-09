@@ -361,7 +361,7 @@ class Test_Rectangle(unittest.TestCase):
                          d3)
         d4 = self.r4.to_dictionary()
         self.assertEqual({"id": 3, "width": 11, "height": 12, "x": 13,
-                          "y": 14}, d4)
+                          "y": 12}, d4)
         self.assertTrue(type(d1) is dict)
         self.assertTrue(type(d2) is dict)
         self.assertTrue(type(d3) is dict)
