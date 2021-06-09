@@ -354,7 +354,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual({"id": 1, "width": 8, "height": 8, "x": 0, "y": 0},
                          d1)
         d2 = self.r2.to_dictionary()
-        self.assertEqual({"id": 2, "width": 2, "height": 3, "x": 4, "y": 0},
+        self.assertEqual({"id": 2, "width": 7, "height": 2, "x": 4, "y": 0},
                          d2)
         d3 = self.r3.to_dictionary()
         self.assertEqual({"id": 9, "width": 5, "height": 6, "x": 7, "y": 8},
