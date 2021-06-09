@@ -10,6 +10,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 import io
 import contextlib
+import os
 
 
 class Test_pep8(unittest.TestCase):
@@ -62,3 +63,22 @@ class TestBaseDocs(unittest.TestCase):
 
 class Test_Rectangle(unittest.TestCase):
     """test cases for rectangle"""
+
+    def test_too_many_args(self):
+        """testing too many args"""
+        Base._Base__nb_objects = 0
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle(2, 4, 2, 4, 2, 2, 4)
+        self.assertEqual(
+            str(e.exception),
+            "__init__() takes from 3 to 6 positional " +
+            "arguments but 8 were given")
+
+    @classmethod
+    def setUpClass(cls):
+        """setup class test"""
+        Base._Base__nb_objects = 0
+        cls.r1 = Rectangle(10, 10)
+        cls.r2 = Rectangle(2, 3, 4)
+        cls.r3 = Rectangle(5, 6, 7, 8, 9)
+        cls.r4 = Rectangle(11, 12, 13, 14)
