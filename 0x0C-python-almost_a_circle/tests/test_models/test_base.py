@@ -37,7 +37,6 @@ class TestBaseDocs(unittest.TestCase):
         self.assertTrue(len(Base.__doc__) >= 1)
 
 
-
 class Test_Base_Model(unittest.TestCase):
     """test cases for base model"""
 
