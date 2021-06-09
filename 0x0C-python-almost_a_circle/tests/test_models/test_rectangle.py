@@ -375,10 +375,11 @@ class Test_Rectangle(unittest.TestCase):
         """test regular use of save_to_file"""
         r1 = Rectangle(1, 1, 1, 1, 1)
         r2 = Rectangle(2, 2, 2, 2, 2)
+        r3 = Rectangle(None)
         l = [r1, r2]
         Rectangle.save_to_file(l)
         with open("Rectangle.json", "r") as f:
-            ls = [r1.to_dictionary(), r2.to_dictionary()]
+            ls = [r1.to_dictionary(), r2.to_dictionary(), r3.to_dictionary()]
             self.assertEqual(json.dumps(ls), f.read())
 
     def test_stf_empty(self):

@@ -2,6 +2,7 @@
 """
 Unittest for Square model
 """
+from re import S
 import unittest
 import pep8
 import json
@@ -285,10 +286,11 @@ class Test_Square(unittest.TestCase):
         """test regular use of save_to_file"""
         s1 = Square(1, 1, 1, 1)
         sq2 = Square(2, 2, 2, 2)
-        l = [s1, sq2]
+        sq3 = Square(3, 3, 3, 3)
+        l = [s1, sq2, sq3]
         Square.save_to_file(l)
         with open("Square.json", "r") as f:
-            ls = [s1.to_dictionary(), sq2.to_dictionary()]
+            ls = [s1.to_dictionary(), sq2.to_dictionary(), sq3.to_dictionary()]
             self.assertEqual(json.dumps(ls), f.read())
 
     def test_stf_empty(self):
@@ -327,3 +329,20 @@ class Test_Square(unittest.TestCase):
             pass
         open("Square.json", 'a').close()
         self.assertEqual(Square.load_from_file(), [])
+
+    def test_to_dict(self):
+        """test regular to_dictionary"""
+        r1 = Square(1, 2, 3, 4)
+        r2 = Square(5, 6, 7, 8)
+        d1 = self.r1.to_dictionary()
+        self.assertEqual({"id": 4, "size": 1, "x": 3, "y": 4},
+                         d1)
+        d2 = self.r2.to_dictionary()
+        self.assertEqual({"id": 8, "size": 8, "x": 6, "y": 7},
+                         d2)
+        self.assertTrue(type(d1) is dict)
+        self.assertTrue(type(d2) is dict)
+        r = Square(1, 1, 1, 1)
+        r.update(**d2)
+        self.assertEqual(str(r), str(self.r2))
+        self.assertNotEqual(r, self.r2)
