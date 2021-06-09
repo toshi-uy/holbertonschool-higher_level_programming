@@ -110,7 +110,7 @@ class Rectangle(Base):
             if kwargs is not None:
                 for key, value in kwargs.items():
                     if key == 'width':
-                       self.integer_validator("width", key)
+                        self.integer_validator("width", key)
                     if key == 'width':
                        self.integer_validator("width", key)
                     if key == 'x':
