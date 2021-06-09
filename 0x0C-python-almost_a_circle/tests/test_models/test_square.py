@@ -94,14 +94,14 @@ class Test_Square(unittest.TestCase):
     def test_x(self):
         """Test for functioning x"""
         self.assertEqual(self.sq1.x, 8)
-        self.assertEqual(self.sq2.x, 4)
+        self.assertEqual(self.sq2.x, 2)
         self.assertEqual(self.sq3.x, 7)
         self.assertEqual(self.sq4.x, 13)
 
     def test_y(self):
         """Test for functioning y"""
         self.assertEqual(self.sq1.y, 0)
-        self.assertEqual(self.sq2.y, 0)
+        self.assertEqual(self.sq2.y, 4)
         self.assertEqual(self.sq3.y, 8)
         self.assertEqual(self.sq4.y, 12)
 
