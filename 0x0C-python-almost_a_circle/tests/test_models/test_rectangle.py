@@ -251,7 +251,6 @@ class Test_Rectangle(unittest.TestCase):
     def test_update_0(self):
         """testing update with args"""
         r1 = Rectangle(10, 10, 10, 10, 8)
-        r1.update(20, 100)
         r1.update(89)
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
         r1.update(89, 2)
