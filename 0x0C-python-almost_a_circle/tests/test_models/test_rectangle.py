@@ -383,7 +383,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_save_to_file_None(self):
         """test regular use of save_to_file"""
-        r1 = Rectangle(None)
+        r1 = None
         l = [r1]
         Rectangle.save_to_file(l)
         with open("Rectangle.json", "r") as f:
