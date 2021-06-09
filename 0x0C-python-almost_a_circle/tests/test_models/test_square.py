@@ -347,4 +347,3 @@ class Test_Square(unittest.TestCase):
             pass
         open("Square.json", 'a').close()
         self.assertEqual(Square.load_from_file(), [])
-
