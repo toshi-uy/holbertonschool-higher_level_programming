@@ -351,7 +351,7 @@ class Test_Rectangle(unittest.TestCase):
     def test_to_dict(self):
         """test regular to_dictionary"""
         d1 = self.r1.to_dictionary()
-        self.assertEqual({"id": 1, "width": 10, "height": 10, "x": 0, "y": 0},
+        self.assertEqual({"id": 1, "width": 8, "height": 8, "x": 0, "y": 0},
                          d1)
         d2 = self.r2.to_dictionary()
         self.assertEqual({"id": 2, "width": 2, "height": 3, "x": 4, "y": 0},
