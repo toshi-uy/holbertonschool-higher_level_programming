@@ -23,22 +23,31 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """ size setter """
+        self.integer_validator("width", value)
         self.width = value
-        self.height = value
 
     def update(self, *args, **kwargs):
         """public method that assigns attributes"""
-        if len(args) != 0:
+        if args and len(args) > 0:
             self.id = args[0]
             if len(args) > 1:
-                self.size = args[1]
+                self.integer_validator("width", args[1])
+                self.__width = args[1]
             if len(args) > 2:
-                self.x = args[2]
+                self.coord_validator("x", args[2])
+                self.__x = args[2]
             if len(args) > 3:
-                self.y = args[3]
+                self.coord_validator("y", args[3])
+                self.__y = args[3]
         else:
             if kwargs is not None:
                 for key, value in kwargs.items():
+                    if key == 'size':
+                        self.integer_validator("width", value)
+                    if key == 'x':
+                        self.coord_validator("x", value)
+                    if key == 'y':
+                        self.coord_validator("y", value)
                     setattr(self, key, value)
 
     def to_dictionary(self):
