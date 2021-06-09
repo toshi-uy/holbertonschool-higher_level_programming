@@ -343,4 +343,3 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle(1, 1, 0, 0, 1)
         r.update(hello=2)
         self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 1/1")
-
