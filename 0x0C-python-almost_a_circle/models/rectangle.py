@@ -111,13 +111,13 @@ class Rectangle(Base):
             if kwargs is not None:
                 for key, value in kwargs.items():
                     if key == 'width':
-                        self.integer_validator("width", key)
+                        self.integer_validator("width", value)
                     if key == 'height':
-                        self.integer_validator("height", key)
+                        self.integer_validator("height", value)
                     if key == 'x':
-                        self.coord_validator("x", key)
+                        self.coord_validator("x", value)
                     if key == 'y':
-                        self.coord_validator("y", key)
+                        self.coord_validator("y", value)
                     setattr(self, key, value)
 
     def to_dictionary(self):
