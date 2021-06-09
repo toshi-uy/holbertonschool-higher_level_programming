@@ -96,14 +96,14 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(self.sq1.x, 8)
         self.assertEqual(self.sq2.x, 2)
         self.assertEqual(self.sq3.x, 6)
-        self.assertEqual(self.sq4.x, 13)
+        self.assertEqual(self.sq4.x, 12)
 
     def test_y(self):
         """Test for functioning y"""
         self.assertEqual(self.sq1.y, 0)
         self.assertEqual(self.sq2.y, 4)
         self.assertEqual(self.sq3.y, 7)
-        self.assertEqual(self.sq4.y, 12)
+        self.assertEqual(self.sq4.y, 13)
 
     def test_no_size(self):
         """Test that width is a mandatory arg"""
