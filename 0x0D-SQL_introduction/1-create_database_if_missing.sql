@@ -1,2 +1,2 @@
 -- script that lists all databases of your MySQL server.
-CREATE DATABASE hbtn_0c_0;
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
