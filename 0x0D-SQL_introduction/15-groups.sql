@@ -3,4 +3,4 @@
 -- The result column name should be average
 -- The database name will be passed as an argument of the mysql command
 
-SELECT score AS `number` GROUP BY score FROM second_table ORDER BY score DESC;
+SELECT score, COUNT(*) AS `number` GROUP BY score FROM second_table ORDER BY score DESC;
