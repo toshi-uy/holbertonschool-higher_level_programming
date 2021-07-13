@@ -7,6 +7,6 @@
 SELECT cities.id, cities.name
 FROM cities
 LEFT OUTER JOIN states
-UNION ALL
 ON cities.name = states.name
+UNION ALL
 ORDER BY cities.id ASC;
