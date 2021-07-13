@@ -6,5 +6,4 @@
 
 SELECT cities.id, cities.name, states.name
 FROM cities JOIN states on city.name = states.name
-union all
 ORDER BY cities.id ASC;
