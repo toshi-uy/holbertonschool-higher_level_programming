@@ -6,6 +6,6 @@
 
 SELECT cities.id, cities.name
 FROM cities
-FULL OUTER JOIN states
+JOIN states
 ON cities.name = states.name
 ORDER BY cities.id ASC;
