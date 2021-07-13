@@ -7,7 +7,7 @@
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command
 
-SELECT tv_show_genres.name AS genre, COUNT(tv_show_genres.show_id) AS number_of_shows
+SELECT tv_genres.name AS genre, COUNT(tv_show_genres.show_id) AS number_of_shows
 FROM tv_genres
 JOIN tv_show_genres ON tv_show_genres.genre_id = tv_genres.id
 WHERE tv_show_genres.genre_id IS NOT NULL
