@@ -1,14 +1,11 @@
 #!/usr/bin/node
-const num = process.argv[2];
-function factorial(x) {
-  if (x < 0) {
-    console.log("num must not be negative");
+const argv = process.argv[2];
+function factorial(num) {
+  if (num < 0) {
+      throw new Error("num must not be negative");
   }
-  if (x <= 1) {
-    return 1;
-  }
-  return x * factorial(x - 1);
+  return num <= 1 ? 1 : num * factorial(num - 1);
 }
 
-let result = factorial(3);
+let result = factorial(argv);
 console.log(result);
