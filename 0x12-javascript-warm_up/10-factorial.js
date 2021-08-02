@@ -12,6 +12,6 @@ if (isNaN(num)) {
   console.log(1);
 }
 if (num > 0) {
-  let result = factorial(num);
+  let result = factorial(3);
   console.log(result);
 }
