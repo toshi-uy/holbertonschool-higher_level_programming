@@ -8,6 +8,9 @@ function factorial(x) {
       return x * factorial(x - 1);
   }
 }
+if (isNaN(num)) {
+  console.log(1);
+}
 if (num > 0) {
   console.log(factorial(num));
 }
