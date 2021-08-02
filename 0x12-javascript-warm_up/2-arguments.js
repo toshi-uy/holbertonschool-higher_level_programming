@@ -3,7 +3,6 @@ import 'process';
 
 if (process.argv0) {
   console.log('Argument found');
-}
-else {
+} else {
   console.log('No argument');
 }
