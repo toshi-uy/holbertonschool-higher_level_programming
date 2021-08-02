@@ -5,11 +5,12 @@ if (argv.length === 2) {
 } else if (argv.length === 3) {
   console.log(0);
 } else {
-  let max = argv[0];
-  for (let i = 2; i < argv.length; i++) {
-    if (argv[i] > max) {
-      max = argv[i];
+  let secondMax = argv[2];
+  argv.sort();
+  for (let i = 2; i < argv.length - 1; i++) {
+    if (argv[i] < argv[i + 1]) {
+      secondMax = argv[i];
     }
   }
-  console.log(max);
+  console.log(secondMax);
 }
