@@ -7,7 +7,7 @@ if (argv.length === 2) {
   console.log(0);
 } else {
   let max = argv[0];
-  for (let i = 2; i < argv.length - 2; i++) {
+  for (let i = 2; i < argv.length - 1; i++) {
     if (argv[i] >= max) {
       max = argv[i];
     }
