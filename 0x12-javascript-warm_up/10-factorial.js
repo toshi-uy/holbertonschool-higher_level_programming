@@ -9,7 +9,5 @@ function factorial(x) {
   }
 }
 
-if (num > 0) {
-  let result = factorial(3);
-  console.log(result);
-}
+let result = factorial(3);
+console.log(result);
