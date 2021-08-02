@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const argv = parseInt(process.argv);
+const argv = process.argv;
 if (argv.length === 2) {
   console.log(0);
 } else if (argv.length === 3) {
