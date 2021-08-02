@@ -5,7 +5,7 @@ if (argv.length === 2) {
 } else if (argv.length === 3) {
   console.log(0);
 } else {
-  let secondMax = argv[2];
+  let secondMax = argv[3];
   argv.sort();
   for (let i = 3; i < argv.length; i++) {
     if (argv[i] > argv[i - 1]) {
