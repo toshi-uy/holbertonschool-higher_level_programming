@@ -11,6 +11,7 @@ function factorial(x) {
 if (isNaN(num)) {
   console.log(1);
 }
-if (num > 0 && isNaN(num) === false) {
-  console.log(factorial(num));
+if (num > 0) {
+  let result = factorial(num);
+  console.log(result);
 }
