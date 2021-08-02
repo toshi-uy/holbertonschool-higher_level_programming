@@ -1,11 +1,16 @@
 #!/usr/bin/node
-const argv = process.argv[2];
-function factorial(num) {
-  if (num < 0) {
-      throw new Error("num must not be negative");
+const num = parseInt(process.argv[2]);
+function factorial(x) {
+  if (x === 0) {
+      return 1;
   }
-  return num <= 1 ? 1 : num * factorial(num - 1);
+  else {
+      return x * factorial(x - 1);
+  }
 }
-
-let result = factorial(argv);
-console.log(result);
+if (isNaN(num)) {
+  console.log(1);
+}
+if (num > 0 && isNaN(num) === false) {
+  console.log(factorial(num));
+}
