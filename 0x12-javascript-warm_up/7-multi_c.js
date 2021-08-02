@@ -7,6 +7,6 @@ if (argv === undefined) {
 if(argv >= 0) {
   while (argv >= 0) {
     console.log(myVar);
-    argv--;
+    argv -= 1;
   }
 }
