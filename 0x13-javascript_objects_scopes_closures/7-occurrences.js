@@ -3,6 +3,7 @@
 exports.nbOccurences = function (list, searchElement) {
     let ocurrency = 0;
     list.forEach(searchElement => {
-        ocurrency++;
+        ocurrency += 1;
+        return ocurrency;
     });
 }
