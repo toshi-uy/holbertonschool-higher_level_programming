@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 module.exports = class Square extends require('./5-square') {
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
       c = 'X';
     }
@@ -12,4 +12,4 @@ module.exports = class Square extends require('./5-square') {
       console.log('');
     }
   }
-}
+};
