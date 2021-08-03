@@ -3,4 +3,5 @@ function add (a,b) {
   return (a + b);
 }
 
-module.exports.add = add;
+const _add = add;
+export { _add as add };
