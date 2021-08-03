@@ -8,7 +8,7 @@ if (argv.length === 2) {
   let secondMax = argv[2];
   argv.sort();
   for (let i = 2; i < argv.length - 1; i++) {
-    if (argv[i] < argv[i + 1]) {
+    if (argv[i] > argv[i + 1]) {
       secondMax = argv[i];
     }
   }
