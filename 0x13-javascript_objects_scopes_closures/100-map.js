@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const list = require('./100-map.js');
+const list = require('./100-map.js').list;
 console.log(list);
-let newList = list.map(function(x, index) {x * index});
+const newList = list.map((x, index) => x * index);
 console.log(newList);
