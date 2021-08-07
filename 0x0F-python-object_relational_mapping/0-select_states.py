@@ -5,9 +5,9 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
     MY_H = "localhost"
-    MY_U = argv[0]
-    MY_PS = argv[1]
-    MY_DB = argv[2]
+    MY_U = argv[1]
+    MY_PS = argv[2]
+    MY_DB = argv[3]
     connect = MySQLdb.connect(host=MY_H, user=MY_U, passwd=MY_PS, db=MY_DB, port=3306)
     cursor = connect.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id")
