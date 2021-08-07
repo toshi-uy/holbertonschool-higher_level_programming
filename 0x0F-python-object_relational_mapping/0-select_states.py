@@ -4,12 +4,12 @@
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    HOSTNAME = "localhost"
-    USERNAME = argv[0]
-    PASSWORD = argv[1]
-    DATABASE = argv[2]
-    connect = MySQLdb.connect(host=HOSTNAME, user=USERNAME,
-                              passwd=PASSWORD, db=DATABASE, port=3306)
+    MY_H = "localhost"
+    MY_U = argv[0]
+    MY_PS = argv[1]
+    MY_DB = argv[2]
+    connect = MySQLdb.connect(host=MY_H, user=MY_U,
+                              passwd=MY_PS, db=MY_DB)
     cursor = connect.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id")
     querry = cursor.fetchall()
