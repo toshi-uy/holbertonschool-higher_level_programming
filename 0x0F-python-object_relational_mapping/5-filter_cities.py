@@ -16,14 +16,14 @@ if (__name__ == "__main__"):
                               charset="utf8")
     cursor = connect.cursor()
     tx = ("SELECT cities.name FROM cities INNER JOIN " +
-         "states ON cities.state_id = states.id WHERE " +
-         "states.name = %s ORDER BY cities.id")
+          "states ON cities.state_id = states.id WHERE " +
+          "states.name = %s ORDER BY cities.id")
     cursor.execute(tx, (STATE,))
     querry = cursor.fetchall()
     result = []
     for line in querry:
         result.append(str(line)[2:-3])
     final = ", ".join(result)
-    print (final)
+    print(final)
     cursor.close()
     connect.close()
