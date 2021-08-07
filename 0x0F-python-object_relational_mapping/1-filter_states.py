@@ -12,7 +12,7 @@ if (__name__ == "__main__"):
                               passwd=PASSWRD, db=DATABASE, port=3306,
                               charset="utf8")
     cursor = connect.cursor()
-    text = "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY states.id"
+    text = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
     cursor.execute(text)
     querry = cursor.fetchall()
     for line in querry:
