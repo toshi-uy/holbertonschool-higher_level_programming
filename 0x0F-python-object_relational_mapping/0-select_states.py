@@ -8,7 +8,7 @@ if (__name__ == "__main__"):
     USER = argv[1]
     PASSWRD = argv[2]
     DATABASE = argv[3]
-    connect = MySQLdb.Connect(host=HOST, user=USER, passwd=PASSWRD, db=DATABASE, port=3306)
+    connect = MySQLdb.Connect(host=HOST, user=USER, passwd=PASSWRD, db=DATABASE, port=3306, charset="utf8")
     cursor = connect.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id")
     querry = cursor.fetchall()
