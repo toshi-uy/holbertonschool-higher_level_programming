@@ -16,7 +16,8 @@ if (__name__ == "__main__"):
                               passwd=PASSWRD, db=DATABASE, port=3306,
                               charset="utf8")
     cursor = connect.cursor()
-    tx = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id".format(SEARCH)
+    tx = "SELECT * FROM states WHERE BINARY\
+ name = '{}' ORDER BY id".format(SEARCH)
     cursor.execute(tx)
     querry = cursor.fetchall()
     for line in querry:
