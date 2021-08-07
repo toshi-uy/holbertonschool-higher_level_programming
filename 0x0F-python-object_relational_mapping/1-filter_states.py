@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""script that lists all states from the database hbtn_0e_0_usa"""
+"""
+script that lists all states with a name starting with N (upper N)
+from the database hbtn_0e_0_usa
+"""
 
 if (__name__ == "__main__"):
     import MySQLdb
@@ -12,10 +15,11 @@ if (__name__ == "__main__"):
                               passwd=PASSWRD, db=DATABASE, port=3306,
                               charset="utf8")
     cursor = connect.cursor()
-    text = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
+    text = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
     cursor.execute(text)
     querry = cursor.fetchall()
     for line in querry:
-        print(line)
+        if line[1][0] == 'N':
+            print(line)
     cursor.close()
     connect.close()
