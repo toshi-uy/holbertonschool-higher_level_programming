@@ -4,7 +4,7 @@
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
-    HOSTNAME = localhost
+    HOSTNAME = "localhost"
     USERNAME = argv[0]
     PASSWORD = argv[1]
     DATABASE = argv[2]
