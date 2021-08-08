@@ -18,6 +18,7 @@ if (__name__ == "__main__"):
     session = Session()
     new_state = State(name='Luisiana')
     session.add(new_state)
+    session.commit()
     for instance in session.query(State).order_by(State.id):
         if instance.name == 'Luisiana':
             print("{}".format(instance.id))
