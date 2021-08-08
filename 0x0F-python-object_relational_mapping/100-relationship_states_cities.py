@@ -6,8 +6,8 @@ the letter a from the database hbtn_0e_6_usa
 
 if (__name__ == "__main__"):
     from sys import argv
-    from relationship_state import Base, State
-    from relationship_city import City
+    from relationship_state import State
+    from relationship_city import Base, City
     from sqlalchemy import (create_engine)
     from sqlalchemy.orm import sessionmaker
 
