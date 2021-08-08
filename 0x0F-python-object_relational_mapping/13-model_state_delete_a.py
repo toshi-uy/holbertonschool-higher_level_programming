@@ -16,7 +16,8 @@ if (__name__ == "__main__"):
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    update = session.query(State).filter(
-        State.id == 2).update({State.name: "New Mexico"})
+    for instance in session.query(State):
+        if 'a' in instance.name:
+            session.delete(instance)
     session.commit()
     session.close()
