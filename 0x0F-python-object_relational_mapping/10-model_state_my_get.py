@@ -19,7 +19,7 @@ if (__name__ == "__main__"):
     flag = 0
     for instance in session.query(State).order_by(State.id):
         if argv[4] == instance.name:
-            print("{}: {}".format(instance.id, instance.name))
+            print("{}".format(instance.id))
             flag = 1
     if flag == 0:
         print("Not found")
