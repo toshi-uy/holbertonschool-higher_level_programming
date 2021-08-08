@@ -16,6 +16,7 @@ Your script should connect to a MySQL server running on localhost at port 3306
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from relationship_city import Base, City
 
 Base = declarative_base()
 
