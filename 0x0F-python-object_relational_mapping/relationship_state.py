@@ -24,7 +24,7 @@ Base = declarative_base()
 class State(Base):
     """class definition of a State and an instance Base = declarative_base()"""
     __tablename__ = 'states'
-    id = Column(Integer, nullable=False, primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
 
-    cities = relationship("City", backref="state", cascade="delete")
+    cities = relationship("City", backref="state")
