@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 """
-script that deletes all State objects with a name containing
-the letter a from the database hbtn_0e_6_usa
+State class:
+In addition to previous requirements, the class attribute
+cities must represent a relationship with the class City.
+If the State object is deleted, all linked City objects
+must be automatically deleted. Also, the reference from a
+City object to his State should be named state
+You must use the module SQLAlchemy
+Script that creates the State “California” with the City “San Francisco”
+from the database hbtn_0e_100_usa: (100-relationship_states_cities.py)
 """
 
 if (__name__ == "__main__"):
