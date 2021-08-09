@@ -32,3 +32,5 @@ Portable | Non-portable
 Can run on any platform | Machine-dependent
 Needs compiler or interpreter for translation | Needs assembler for translation
 Widely used for programming | Not commonly used in programming
+
+** Info extracted from https://www.webopedia.com/definitions/high-level-language/
