@@ -19,7 +19,7 @@ if __name__ == "__main__":
         data = {'q' : ""}
     else:
         data = {'q' : sys.argv[2]}
-    req = requests.post(sys.argv[1], data)
+    req = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
         if(len(req.json) is 0):
             print("No result")
