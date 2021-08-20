@@ -9,7 +9,7 @@ if __name__ == "__main__":
     import urllib.parse
     import sys
 
-    if sys.argv[1]:
+    if sys.argv[1] and sys.argv[2]:
         data = urllib.parse.urlencode({'email': sys.argv[2]})
         url = sys.argv[1] + "?" + data
         with urllib.request.urlopen(url) as response:
