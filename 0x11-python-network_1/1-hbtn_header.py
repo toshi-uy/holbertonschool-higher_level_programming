@@ -6,10 +6,9 @@ variable found in the header of the response.
 
 if __name__ == "__main__":
     import urllib.request
-    import sys
+    from sys import argv
 
-    req = urllib.request.Request('https://intranet.hbtn.io/status')
+    req = urllib.request.Request(argv[1])
     with urllib.request.urlopen(req) as response:
         info = response.info()
         print(info['X-Request-Id'])
-
