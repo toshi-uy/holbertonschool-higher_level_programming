@@ -14,5 +14,5 @@ if __name__ == "__main__":
             with urllib.request.urlopen(req) as response:
                     print(response.read().decode('utf-8'))
         except:
-            a = urllib.urlopen(sys.argv[1])
+            a = urllib.request.urlopen(sys.argv[1])
             print("Error code:", a.getcode())
