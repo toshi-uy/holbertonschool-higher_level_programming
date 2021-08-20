@@ -9,5 +9,5 @@ if __name__ == "__main__":
     import sys
 
     if sys.argv[1]:
-        req = requests.post(sys.argv[1], json={'email': sys.argv[2]})
-        print(req.request.body)
+        req = requests.post(sys.argv[1], data={'email': sys.argv[2]})
+        print(req)
