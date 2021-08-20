@@ -14,4 +14,4 @@ if __name__ == "__main__":
             try:
                 print(response.read().decode('utf-8'))
             except:
-                print (req.getcode())
+                print("Error code:",req.getcode())
