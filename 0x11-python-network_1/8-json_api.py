@@ -25,6 +25,6 @@ if __name__ == "__main__":
             print("No result")
         else:
             jeison = req.json()
-            print("[{}] {}".format(jeison.get('id'),jeison.get('name')))git pull
+            print("[{}] {}".format(jeison.get('id'),jeison.get('name')))
     except:
         print("Not a valid JSON")
