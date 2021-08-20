@@ -11,4 +11,4 @@ if __name__ == "__main__":
     if sys.argv[1]:
         req = requests.Request('POST', sys.argv[1], headers={'email': sys.argv[2]})
         prepared = req.prepare()
-        print(req.body)
+        print(prepared)
