@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import sys
 
     if sys.argv[1]:
-        dat = urllib.parse.urlencode({'email': sys.argv[2]}, encoding='ascii')
-        req = urllib.request.Request(sys.argv[1])
-        with urllib.request.urlopen(req, dat) as response:
+        data = urllib.parse.urlencode({'email': sys.argv[2]})
+        url = sys.argv[1] + "?" + data
+        with urllib.request.urlopen(url) as response:
             print(response.read().decode('utf-8'))
