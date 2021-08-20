@@ -8,7 +8,8 @@ if __name__ == "__main__":
     import urllib.request
     import sys
 
-    req = urllib.request.Request(sys.argv[1])
-    with urllib.request.urlopen(req) as response:
-        info = response.info()
-        print(info['X-Request-Id'])
+    if sys.argv[1]:
+        req = urllib.request.Request(sys.argv[1])
+        with urllib.request.urlopen(req) as response:
+            info = response.info()
+            print(info['X-Request-Id'])
