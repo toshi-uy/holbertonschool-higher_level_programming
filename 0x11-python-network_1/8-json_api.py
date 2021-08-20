@@ -15,13 +15,13 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    if len(sys.argv) == 1:
+    if len(sys.argv) is 1:
         data = {'q' : ""}
     else:
         data = {'q' : sys.argv[2]}
     req = requests.post(sys.argv[1], data)
     try:
-        if(len(req.json) == 0):
+        if(len(req.json) is 0):
             print("No result")
         else:
             jeison = req.json()
