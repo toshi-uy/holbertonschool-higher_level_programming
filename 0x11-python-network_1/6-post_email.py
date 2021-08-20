@@ -9,5 +9,5 @@ if __name__ == "__main__":
     import sys
 
     if sys.argv[1]:
-        response = requests.Request('POST', sys.argv[1], headers={'email': sys.argv[2]})
+        response = requests.post(sys.argv[1], headers={'email': sys.argv[2]})
         print(response.request.body)
