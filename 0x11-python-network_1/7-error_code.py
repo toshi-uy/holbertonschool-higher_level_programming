@@ -10,5 +10,7 @@ if __name__ == "__main__":
 
     if sys.argv[1]:
         req = requests.get(sys.argv[1])
-        print("Error code:", req.status_code)
-
+        try:
+            print(req.text)
+        except:
+            print("Error code:", req.status_code)
