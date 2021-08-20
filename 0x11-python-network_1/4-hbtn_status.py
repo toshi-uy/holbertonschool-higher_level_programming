@@ -8,8 +8,6 @@ if __name__ == "__main__":
     import requests
 
     respond = requests.get('https://intranet.hbtn.io/status')
-    content = respond.content
-    print(content)
     print("Body response:")
-    print("\t- type:", content['type'])
-    print("\t- content:", content['content'])
+    print("\t- type:", respond.type)
+    print("\t- content:", respond.content)
