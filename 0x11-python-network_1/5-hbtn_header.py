@@ -11,4 +11,4 @@ if __name__ == "__main__":
     if sys.argv[1]:
         req = requests.get(sys.argv[1])
         info = req.headers
-        print(info['X-Request-Id'])
+        print(info.get('X-Request-Id'))
