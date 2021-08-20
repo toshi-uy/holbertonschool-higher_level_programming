@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     if sys.argv[1]:
         req = requests.get(sys.argv[1])
-        try:
-            print(req.text)
-        except:
+        if req.status_code >= 400:
             print("Error code:", req.status_code)
+        else:
+            print(req.text)
