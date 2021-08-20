@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     respond = requests.get('https://intranet.hbtn.io/status')
     print("Body response:")
-    print("\t- type:", respond.headers['content-type'])
+    print("\t- type:", respond.raw)
     print("\t- content:", respond.content)
