@@ -10,4 +10,4 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 3:
         respond = requests.get('https://api.github.com/user', auth=(sys.argv[1], sys.argv[2]))
-        print(respond.headers.get('id'))
+        print(respond.json().get('id'))
