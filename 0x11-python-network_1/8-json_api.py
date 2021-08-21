@@ -16,15 +16,15 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) is 1:
-        data = {'q' : ""}
+        data = {'q': ""}
     else:
-        data = {'q' : sys.argv[1]}
+        data = {'q': sys.argv[1]}
     req = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
         if len(req.json()) == 0:
             print("No result")
         else:
             jeison = req.json()
-            print("[{}] {}".format(jeison.get('id'),jeison.get('name')))
+            print("[{}] {}".format(jeison.get('id'), jeison.get('name')))
     except:
         print("Not a valid JSON")
