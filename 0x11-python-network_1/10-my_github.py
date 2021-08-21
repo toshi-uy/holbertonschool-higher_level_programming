@@ -10,5 +10,5 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 3:
         data = {sys.argv[1]: sys.argv[2]}
-        respond = requests.get('https://api.github.com/user', data)
+        respond = requests.post('https://api.github.com/user', data)
         print(respond.headers.get('id'))
