@@ -16,6 +16,7 @@ if __name__ == "__main__":
         )
         respond = requests.get(url)
         commits = respond.json()
+        print(commits)
         i = 0
         for commit in commits:
             print(commit)
