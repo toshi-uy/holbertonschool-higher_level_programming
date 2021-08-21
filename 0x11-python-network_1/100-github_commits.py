@@ -11,11 +11,16 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) == 3:
-        url = 'https://api.github.com/repos/' + sys.argv[1] + '/' + sys.argv[2] + '/comits'
+        url = 'https://api.github.com/repos/' + sys.argv[1]\
+               + '/' + sys.argv[2] + '/comits'
         respond = requests.get(url)
         commits = respond.json()
-        for index, commit in commits:
-            if index >= 9:
-                print("{}: {}".format(commit.get('sha'), commit.get('commit').get('author').get('name')))
+        i = 0
+        for commit in commits:
+            if i <= 9:
+                print("{}: {}".format(commit.get('sha'),
+                                      commit.get('commit')
+                                      .get('author').get('name')))
+                i += 1
             else:
                 break
