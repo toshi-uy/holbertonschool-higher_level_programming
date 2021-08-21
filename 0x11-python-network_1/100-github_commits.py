@@ -11,8 +11,9 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) == 3:
-        url = 'https://api.github.com/repos/' + sys.argv[1]\
-               + '/' + sys.argv[2] + '/comits'
+        url = 'https://api.github.com/repos/{}/{}/comits'.format(
+            sys.argv[1], sys.argv[2]
+        )
         respond = requests.get(url)
         commits = respond.json()
         i = 0
