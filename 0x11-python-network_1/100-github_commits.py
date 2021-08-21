@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 3:
         respond = requests.get('https://api.github.com/repos/{}/{}/commits'
-                     .format(sys.argv[2], sys.argv[1]))
+                               .format(sys.argv[2], sys.argv[1]))
         commits = respond.json()
         i = 0
         for commit in commits:
