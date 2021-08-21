@@ -18,10 +18,11 @@ if __name__ == "__main__":
         commits = respond.json()
         i = 0
         for commit in commits:
+            print(commit)
             if i <= 9:
-                print("{}: {}".format(commit.get('sha'),
-                                      commit.get('commit')
-                                      .get('author').get('name')))
+                print("{}: {}".format(
+                    commit.get('sha'),
+                    commit.get('commit').get('author').get('name')))
                 i += 1
             else:
                 break
