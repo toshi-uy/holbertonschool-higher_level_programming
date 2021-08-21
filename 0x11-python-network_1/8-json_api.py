@@ -21,7 +21,7 @@ if __name__ == "__main__":
         data = {'q' : sys.argv[1]}
     req = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
-        if(len(req.json) is 0):
+        if(len(req.json) == 0):
             print("No result")
         else:
             jeison = req.json()
