@@ -10,7 +10,10 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
         if (tasks.completed)
-          results[tasks.userId] += 1;
+          if (results[tasks.userId] = NaN)
+            results[tasks.userId] = 1;
+          else
+            results[tasks.userId] += 1;
     });
     console.log(results)
   }
