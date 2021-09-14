@@ -10,7 +10,7 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
       tasks.forEach(element => {
-        if (element.completed === true)
+        if (element.completed)
           results.append(element.userId)
       });
     });
