@@ -9,12 +9,11 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
-        let count = 1;
         if (tasks.completed)
           if (!results[tasks.userId])
             results[tasks.userId] = 1;
           else
-            results[tasks.userId] += count;
+            results[tasks.userId] += 1;
     });
     console.log(results)
   }
