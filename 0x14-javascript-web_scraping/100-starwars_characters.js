@@ -8,6 +8,14 @@ request(url, options, (error, res, body) => {
     return console.log(error);
   }
   if (!error && res.statusCode === 200) {
-    console.log(body.characters);
+    body.characters.forEach(element => {
+      request(element, options, (error, res, body) => {
+        if (error) {
+          return console.log(error);
+        }
+        if (!error && res.statusCode === 200) {
+          console.log(body.name);
+        });
+    });
   }
 });
