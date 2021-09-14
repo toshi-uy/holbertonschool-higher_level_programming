@@ -11,8 +11,8 @@ request(url, options, (error, res, body) => {
     body.forEach(tasks => {
         let count = 1;
         if (tasks.completed)
-          if (results[tasks.userId] = NaN)
-            results[tasks.userId] += count;
+          if (!results[tasks.userId])
+            results[tasks.userId] = 1;
           else
             results[tasks.userId] += count;
     });
