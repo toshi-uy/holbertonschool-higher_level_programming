@@ -8,7 +8,7 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     body.forEach(element => { 
-      console.log(element);
+      console.log(element.userId);
     });
   }
 });
