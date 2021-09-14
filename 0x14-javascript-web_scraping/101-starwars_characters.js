@@ -15,7 +15,7 @@ request(url, options, (error, res, body) => {
     }
     sorted = sorted.sort()
     for (let i = 0; i < sorted.length; i++) {
-      request(sorted[i], (error, res, body) => {
+      request(sorted[i], options, (error, res, body) => {
         if (error) {
           return console.log(error);
         }
