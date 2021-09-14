@@ -21,7 +21,7 @@ request(url, options, (error, res, body) => {
         }
         if (!error && res.statusCode === 200) {
           console.log(body.name);
-          console.log(unsorted[i]);
+          console.log(sorted[i]);
         }
       })
     }
