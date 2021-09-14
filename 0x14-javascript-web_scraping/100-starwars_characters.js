@@ -15,7 +15,8 @@ request(url, options, (error, res, body) => {
         }
         if (!error && res.statusCode === 200) {
           console.log(body.name);
-        });
+        }
+      });
     });
   }
 });
