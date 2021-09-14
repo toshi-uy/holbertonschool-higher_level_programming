@@ -11,7 +11,7 @@ request(url, options, (error, res, body) => {
     function sortObjectByKeys(o) {
       return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
     }
-    var sorted=sortObjectByKeys(body.characters);
+    let sorted = sortObjectByKeys(body.characters);
     sorted.forEach(element => {
       request(element, options, (error, res, body) => {
         if (error) {
