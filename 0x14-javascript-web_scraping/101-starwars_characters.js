@@ -13,6 +13,7 @@ request(url, options, (error, res, body) => {
     for (let i = 0; i < unsorted.length; i++) {
       sorted.push(unsorted[i]);
     }
+    sorted = sorted.sort()
     for (let i = 0; i < sorted.length; i++) {
       request(sorted[i], options, (error, res, body) => {
         if (error) {
