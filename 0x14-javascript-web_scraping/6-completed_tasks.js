@@ -10,8 +10,8 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
       tasks.forEach(element => {
-        if (tasks.completed === true)
-          results.append(task.userId)
+        if (element.completed === true)
+          results.append(element.userId)
       });
     });
     console.log(results)
