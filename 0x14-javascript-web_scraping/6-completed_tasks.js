@@ -2,7 +2,7 @@
 const url = process.argv[2];
 const request = require('request');
 const options = { json: true };
-let results = []
+let results = {}
 request(url, options, (error, res, body) => {
   if (error) {
     return console.log(error);
@@ -11,7 +11,7 @@ request(url, options, (error, res, body) => {
     body.forEach(tasks => {
       tasks.forEach(element => {
         if (element.completed)
-          results.append(element.userId)
+          results.push(element.userId)
       });
     });
     console.log(results)
