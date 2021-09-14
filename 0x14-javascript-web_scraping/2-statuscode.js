@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const url = process.argv[1];
+const url = process.argv[2];
 const options = {
   uri: url
 }
