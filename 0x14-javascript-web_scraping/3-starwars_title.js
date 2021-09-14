@@ -2,13 +2,12 @@
 const filmNbr = process.argv[2];
 const request = require('request');
 const url = 'https://swapi-api.hbtn.io/api/films/' + filmNbr;
-let options = {json: true};
+const options = { json: true };
 request(url, options, (error, res, body) => {
   if (error) {
-      return  console.log(error)
-  };
-
-  if (!error && res.statusCode == 200) {
+    return console.log(error);
+  }
+  if (!error && res.statusCode === 200) {
     console.log(body.title);
   };
-});
+})
