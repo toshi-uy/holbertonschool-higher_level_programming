@@ -9,11 +9,13 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
-      if (tasks.completed)
-        if (!results[tasks.userId])
+      if (tasks.completed) {
+        if (!results[tasks.userId]) {
           results[tasks.userId] = 1;
-        else
+        } else { 
           results[tasks.userId] += 1;
+        }
+      }
     });
     console.log(results);
   }
