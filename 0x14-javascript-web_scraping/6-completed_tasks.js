@@ -10,7 +10,7 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
         if (tasks.completed)
-          results['username'] = tasks.userId;
+          results[userId] += 1;
     });
     console.log(results)
   }
