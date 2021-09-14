@@ -12,7 +12,7 @@ request(url, options, (error, res, body) => {
       if (tasks.completed) {
         if (!results[tasks.userId]) {
           results[tasks.userId] = 1;
-        } else { 
+        } else {
           results[tasks.userId] += 1;
         }
       }
