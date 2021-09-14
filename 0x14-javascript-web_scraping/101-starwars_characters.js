@@ -9,6 +9,7 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     let unsorted = body.characters;
+    console.log(unsorted);
     const sorted = unsorted.sort()
     for (let i = 0; i < sorted.length; i++) {
       request(sorted[i], options, (error, res, body) => {
