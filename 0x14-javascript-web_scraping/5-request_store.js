@@ -6,7 +6,7 @@ const fs = require('fs');
 
 req.get(argv1, function (err, response) {
   if (err) throw err;
-  fs.appendFile(response.body, argv2, function (err) {
+  fs.appendFile(argv2, response.body, function (err) {
     if (err) throw err;
   });
 });
