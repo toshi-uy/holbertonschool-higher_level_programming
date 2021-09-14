@@ -10,7 +10,7 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     let unsorted = body.characters;
     const sorted = unsorted.sort()
-    for (let i = 0; i < length(sorted); i++) {
+    for (let i = 0; i < sorted.length; i++) {
       request(element, options, (error, res, body) => {
         if (error) {
           return console.log(error);
