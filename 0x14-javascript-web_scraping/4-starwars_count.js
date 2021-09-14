@@ -10,7 +10,7 @@ request(url, options, (error, res, body) => {
   if (!error && res.statusCode === 200) {
     body.results.forEach(element => {
       element.characters.forEach(character => {
-        if (character.includes === '/18/') {
+        if (character.includes('/18/')) {
           wedge += 1;
         }
       });
