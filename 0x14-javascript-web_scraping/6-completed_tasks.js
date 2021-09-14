@@ -9,11 +9,12 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     body.forEach(tasks => {
+        let count = 1;
         if (tasks.completed)
           if (results[tasks.userId] = NaN)
-            results[tasks.userId] = 1;
+            results[tasks.userId] += count;
           else
-            results[tasks.userId] += 1;
+            results[tasks.userId] += count;
     });
     console.log(results)
   }
