@@ -11,7 +11,7 @@ request(url, options, (error, res, body) => {
     const unsorted = body.characters;
     let sorted = [];
     for (let i = 0; i < unsorted.length; i++) {
-      sorted.append(unsorted[i]);
+      sorted.push(unsorted[i]);
     }
     for (let i = 0; i < sorted.length; i++) {
       request(sorted[i], options, (error, res, body) => {
