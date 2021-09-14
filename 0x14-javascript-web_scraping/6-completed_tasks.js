@@ -7,7 +7,7 @@ request(url, options, (error, res, body) => {
     return console.log(error);
   }
   if (!error && res.statusCode === 200) {
-    body.results.forEach(element => { 
+    body.forEach(element => { 
       console.log(element);
     });
   }
