@@ -8,6 +8,7 @@ request(url, options, (error, res, body) => {
     return console.log(error);
   }
   if (!error && res.statusCode === 200) {
+    let sorted = {};
     function sortObjectByKeys(o) {
       return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
     }
