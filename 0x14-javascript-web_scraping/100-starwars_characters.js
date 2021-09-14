@@ -8,6 +8,6 @@ request(url, options, (error, res, body) => {
     return console.log(error);
   }
   if (!error && res.statusCode === 200) {
-    console.log(body);
+    console.log(body.characters);
   }
 });
