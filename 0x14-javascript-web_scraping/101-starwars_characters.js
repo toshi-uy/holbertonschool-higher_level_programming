@@ -8,10 +8,7 @@ request(url, options, (error, res, body) => {
     return console.log(error);
   }
   if (!error && res.statusCode === 200) {
-    let unsorted = []
-    body.characters.forEach(element => {
-      unsorted.append(element);
-    })
+    let unsorted = body.characters;
     const sorted = unsorted.sort()
     for (let i = 0; i < length(sorted); i++) {
       request(element, options, (error, res, body) => {
