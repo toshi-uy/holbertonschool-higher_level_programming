@@ -8,7 +8,6 @@ request(url, function (error, response, body) {
     console.error(error);
   }
   const path = JSON.parse(body).characters;
-  path = list(path)
   console.log(path)
   for(i = 0; i < path.length; i++) {
     request(element, function (error, response, body) {
