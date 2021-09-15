@@ -19,7 +19,7 @@ async function f1() {
   }
   const path = JSON.parse(body).characters;
   path.forEach(element => {
-    request(wholeArray[i], function (error, response, body) {
+    request(element, function (error, response, body) {
       if (error) {
         console.error(error);
       }
