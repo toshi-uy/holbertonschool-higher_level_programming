@@ -7,14 +7,14 @@ request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   }
-  const path = JSON.parse(body).characters;
+  const path = (await JSON.parse(body).characters);
   path.forEach(element => {
     request(element, function (error, response, body) {
       if (error) {
         console.error(error);
       }
       const name = JSON.parse(body).name;
-      console.log(name);
+      console.log(await name);
     });
   });
 });
