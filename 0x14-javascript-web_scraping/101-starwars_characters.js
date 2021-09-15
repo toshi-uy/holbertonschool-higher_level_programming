@@ -9,14 +9,11 @@ request(url, function (error, response, body) {
   }
   const path = JSON.parse(body).characters;
   console.log(path);
-  result = [];
-  for(let i in path){
-    result.push([i, path[i]]);
-  }
-  console.log(result);
+  let wholeArray = Object.keys(path).map(key => path[key]);
+  console.log(wholeArray);
 
-  for(i = 0; i < result.length; i++) {
-    request(result[i], function (error, response, body) {
+  for(i = 0; i < wholeArray.length; i++) {
+    request(wholeArray[i], function (error, response, body) {
       if (error) {
         console.error(error);
       }
