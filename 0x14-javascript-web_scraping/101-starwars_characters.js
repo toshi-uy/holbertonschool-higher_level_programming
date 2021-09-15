@@ -8,8 +8,9 @@ request(url, function (error, response, body) {
     console.error(error);
   }
   const path = JSON.parse(body).characters;
+  path = list(path)
   console.log(path)
-  path.forEach(element => {
+  for(i = 0; i < path.length; i++) {
     request(element, function (error, response, body) {
       if (error) {
         console.error(error);
@@ -17,5 +18,5 @@ request(url, function (error, response, body) {
       const name = JSON.parse(body).name;
       console.log(name);
     });
-  });
+  };
 });
