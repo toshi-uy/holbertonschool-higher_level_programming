@@ -15,7 +15,7 @@ request(url, function (error, response, body) {
   }
   console.log(result);
 
-  for(i = 0; i < path.length; i++) {
+  for(i = 0; i < result.length; i++) {
     request(result[i], function (error, response, body) {
       if (error) {
         console.error(error);
