@@ -12,7 +12,6 @@ function resolveAfter2Seconds(x) {
 }
 
 async function f1() {
-  var x = await resolveAfter2Seconds(20);
   request(url, function (error, response, body) {
   if (error) {
     console.error(error);
