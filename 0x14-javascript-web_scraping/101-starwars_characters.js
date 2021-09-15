@@ -18,7 +18,7 @@ async function f1() {
   }
   const path = JSON.parse(body).characters;
   path.forEach(element => {
-    var x = await resolveAfter2Seconds(20);
+    const x = await resolveAfter2Seconds(10);
     request(element, function (error, body) {
       if (error) {
         console.error(error);
