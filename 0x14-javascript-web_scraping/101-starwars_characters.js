@@ -15,8 +15,8 @@ request(url, options, (error, res, body) => {
           return console.log(error);
         }
         if (!error && res.statusCode === 200) {
-          console.log(body.name);
-          console.log(sorted[i]);
+          const name = JSON.parse(body).name;
+          console.log(name);
         }
     })
     });
