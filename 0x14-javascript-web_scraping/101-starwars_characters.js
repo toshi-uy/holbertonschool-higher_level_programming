@@ -15,11 +15,10 @@ async function f3() {
 
     for(i = 0; i < wholeArray.length; i++) {
       request(wholeArray[i], function (error, body) {
-        var y = await 20;
         if (error) {
           console.error(error);
         }
-        const name = JSON.parse(body).name;
+        const name = await JSON.parse(body).name;
         console.log(name);
       });
     };
