@@ -18,7 +18,8 @@ async function f3() {
         if (error) {
           console.error(error);
         }
-        const name = await JSON.parse(body).name;
+        const name = JSON.parse(body).name;
+        name = await name;
         console.log(name);
       });
     };
