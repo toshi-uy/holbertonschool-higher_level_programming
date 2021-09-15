@@ -9,7 +9,7 @@ request(url, options, (error, res, body) => {
   }
   if (!error && res.statusCode === 200) {
     const sorted = JSON.parse(body).characters;
-    for (let i = 0; i < sorted.length; i++) {
+    sorted.forEach(element => {
       request(sorted[i], (error, res, body) => {
         if (error) {
           return console.log(error);
@@ -18,7 +18,7 @@ request(url, options, (error, res, body) => {
           console.log(body.name);
           console.log(sorted[i]);
         }
-      })
+    })
+    });
     }
-  }
-});
+  });
