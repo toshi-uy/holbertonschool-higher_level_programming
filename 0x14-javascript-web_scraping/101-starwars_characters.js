@@ -20,7 +20,7 @@ async function f2() {
   }
 ,
 
-function f1() {
+async function f1() {
   const x = await resolveAfter2Seconds(10);
   path = f2()
   path.forEach(element => {
