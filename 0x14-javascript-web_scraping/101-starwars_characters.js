@@ -7,7 +7,7 @@ function resolveAfter2Seconds(x) {
   });
 }
 
-function f2() {
+async function f2() {
   const filmNbr = process.argv[2];
   const request = require('request');
   const url = 'https://swapi-api.hbtn.io/api/films/' + filmNbr;
@@ -20,7 +20,7 @@ function f2() {
   }
 ,
 
-async function f1() {
+function f1() {
   const x = await resolveAfter2Seconds(10);
   path = f2()
   path.forEach(element => {
