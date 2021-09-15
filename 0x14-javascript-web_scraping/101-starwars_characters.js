@@ -8,9 +8,15 @@ request(url, function (error, response, body) {
     console.error(error);
   }
   const path = JSON.parse(body).characters;
-  console.log(path)
+  console.log(path);
+  result = [];
+  for(let i in path){
+    result.push([i, path[i]]);
+  }
+  console.log(result);
+
   for(i = 0; i < path.length; i++) {
-    request(path[i], function (error, response, body) {
+    request(result[i], function (error, response, body) {
       if (error) {
         console.error(error);
       }
