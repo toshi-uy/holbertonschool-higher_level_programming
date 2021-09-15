@@ -8,13 +8,14 @@ request(url, function (error, response, body) {
     console.error(error);
   }
   const path = JSON.parse(body).characters;
+  console.log(path)
   path.forEach(element => {
     request(element, function (error, response, body) {
       if (error) {
         console.error(error);
       }
       const name = JSON.parse(body).name;
-      console.log(await name);
+      console.log(name);
     });
   });
 });
