@@ -18,11 +18,7 @@ async function f1() {
     console.error(error);
   }
   const path = JSON.parse(body).characters;
-  console.log(path);
-  let wholeArray = Object.keys(path).map(key => path[key]);
-  console.log(wholeArray);
-
-  for(i = 0; i < wholeArray.length; i++) {
+  path.forEach(element => {
     request(wholeArray[i], function (error, response, body) {
       if (error) {
         console.error(error);
@@ -30,7 +26,7 @@ async function f1() {
       const name = JSON.parse(body).name;
       console.log(name);
     });
-  };
+  }); 
   });
 }
 
