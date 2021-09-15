@@ -2,23 +2,23 @@
 const filmNbr = process.argv[2];
 const request = require('request');
 const url = 'https://swapi-api.hbtn.io/api/films/' + filmNbr;
-const options = { json: true };
-request(url, options, (error, res, body) => {
+
+request(url, function (error, response, body) {
   if (error) {
-    return console.log(error);
+    console.error(error);
   }
-  if (!error && res.statusCode === 200) {
+  if (!error && res.statusCode === 200){
     const sorted = JSON.parse(body).characters;
     sorted.forEach(element => {
-      request(sorted[i], (error, res, body) => {
+      request(element, function (error, response, body) {
         if (error) {
-          return console.log(error);
+          console.error(error);
         }
-        if (!error && res.statusCode === 200) {
-          const name = JSON.parse(body).name;
-          console.log(name);
-        }
-    })
+        if (!error && res.statusCode === 200){
+        const name = JSON.parse(body).name;
+        console.log(name);
+      }
+      });
     });
-    }
-  });
+  }
+});
