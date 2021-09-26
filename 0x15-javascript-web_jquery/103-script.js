@@ -5,8 +5,8 @@ $(document).ready(function language_enter () {
       $('DIV#hello').text(response.hello);
     });
   });
-  $(document).on('keypress',function(e) {
-    if(e.which == 13) {
+  $(document).on('keypress', function (e) {
+    if (e.which === 13) {
       const language = $('INPUT#language_code').val();
       $.get('https://fourtonfish.com/hellosalut/?lang=' + language, function (response) {
         $('DIV#hello').text(response.hello);
