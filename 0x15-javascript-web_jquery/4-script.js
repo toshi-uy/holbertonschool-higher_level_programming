@@ -1,3 +1,25 @@
-$('DIV#toggle_header').click(function () {
-  $(this).parent().find('header').toggleClass('red green');
-});
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+      .red {
+        color: #FF0000;
+      }
+      .green {
+        color: #00FF00;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="green"> 
+      First HTML page
+    </header>
+    <div id="toggle_header">Toggle header</div>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="4-script.js"></script>
+  </body>
+</html>
