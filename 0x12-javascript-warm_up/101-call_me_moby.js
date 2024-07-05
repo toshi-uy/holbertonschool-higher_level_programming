@@ -5,6 +5,4 @@ function callMeMoby(times, func) {
   }
 }
 
-module.exports = {
-    callMeMoby: callMeMoby
-};
+module.exports.callMeMoby = callMeMoby;
